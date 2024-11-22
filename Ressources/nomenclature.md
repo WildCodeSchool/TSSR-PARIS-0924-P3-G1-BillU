@@ -50,11 +50,11 @@ Ex : Alban Dumas = alban.dumas@BillU.fr
 
 Type d’appareil : 
 
-PC: pour un ordinateur de bureau
-LAPTOP: pour un ordinateur portable
-PRINT: pour une imprimante
-SVR: pour un serveur
-TEL: téléphone
+1) PC: pour un ordinateur de bureau
+2) LAPTOP: pour un ordinateur portable
+3) PRINT: pour une imprimante
+4) SVR: pour un serveur
+5) TEL: téléphone
 
 Ex pour Alban Dumas : CRP_LAPTOP_HP_ PA78671
 
