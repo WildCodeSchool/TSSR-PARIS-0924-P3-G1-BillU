@@ -59,6 +59,5 @@ L’adressage est divisé comme suit :
 
 4. Convention de nommage
 
-![SCHEMA](https://github.com/user-attachments/assets/de96b600-f5f0-4fdf-b0da-6c7a54cad61e)
 
 
