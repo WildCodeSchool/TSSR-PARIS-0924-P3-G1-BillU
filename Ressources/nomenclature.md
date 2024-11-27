@@ -50,8 +50,8 @@ Ex : Alban Dumas = alban.dumas@BillU.fr
 
 Type d’appareil : 
 
-1) PC: pour un ordinateur de bureau
-2) LAPTOP: pour un ordinateur portable
+1) DESKTOP : pour un ordinateur de bureau
+2) PC: pour un ordinateur portable
 3) PRINT: pour une imprimante
 4) SVR: pour un serveur
 5) TEL: téléphone
