@@ -1,0 +1,88 @@
+
+
+### Initialisation
+
+$FilePath = [System.IO.Path]::GetDirectoryName($MyInvocation.MyCommand.Definition)
+$DomainDN = (Get-ADDomain).DistinguishedName
+
+# Importer le module Active Directory si nécessaire
+If (-not (Get-Module -Name ActiveDirectory)) {
+    Import-Module ActiveDirectory
+}
+
+### Parametre(s) à modifier
+
+$File = "$FilePath\ListCOMPUTER.txt"
+
+
+# Définir le chemin de l'OU cible (PC_Standard)
+$TargetOU = "OU=PC_Standard,OU=COMPUTER,
+
+### Initialisation
+
+$FilePath = [System.IO.Path]::GetDirectoryName($MyInvocation.MyCommand.Definition)
+$DomainDN = (Get-ADDomain).DistinguishedName
+
+# Importer le module Active Directory si nécessaire
+If (-not (Get-Module -Name ActiveDirectory)) {
+    Import-Module ActiveDirectory
+}
+
+### Parametre(s) à modifier
+
+$File = "$FilePath\ListCOMPUTER.txt"
+
+
+# Définir le chemin de l'OU cible (PC_Standard)
+$TargetOU = "OU=PC_Standard,OU=COMPUTER,DC=billu,DC=remindme,DC=lan"
+
+# Charger la liste des ordinateurs depuis le fichier texte
+$ComputersFile = "$FilePath\ListCOMPUTER.txt"  
+$ComputersToCreate = Get-Content -Path $ComputersFile
+
+# Boucle à travers chaque ordinateur et création dans l'OU cible
+foreach ($ComputerName in $ComputersToCreate) {
+    try {
+        # Vérifier si l'ordinateur existe déjà
+        $ExistingComputer = Get-ADComputer -Filter {Name -eq $ComputerName} -ErrorAction SilentlyContinue
+        if ($ExistingComputer) {
+            Write-Host "L'ordinateur $ComputerName existe déjà dans l'Active Directory." -ForegroundColor Yellow
+        } else {
+            # Créer un nouvel objet ordinateur dans l'OU cible
+             New-ADComputer -Name $ComputerName `
+               -Path $TargetOU `
+               -Enabled $true `
+            
+
+            Write-Host "L'ordinateur $ComputerName a été créé dans $TargetOU." -ForegroundColor Green
+        }
+    } catch {
+        Write-Host "Erreur lors de la création de l'ordinateur $ComputerName : $_" -ForegroundColor Red
+    }
+}
+"
+
+# Charger la liste des ordinateurs depuis le fichier texte
+$ComputersFile = "$FilePath\ListCOMPUTER.txt"  
+$ComputersToCreate = Get-Content -Path $ComputersFile
+
+# Boucle à travers chaque ordinateur et création dans l'OU cible
+foreach ($ComputerName in $ComputersToCreate) {
+    try {
+        # Vérifier si l'ordinateur existe déjà
+        $ExistingComputer = Get-ADComputer -Filter {Name -eq $ComputerName} -ErrorAction SilentlyContinue
+        if ($ExistingComputer) {
+            Write-Host "L'ordinateur $ComputerName existe déjà dans l'Active Directory." -ForegroundColor Yellow
+        } else {
+            # Créer un nouvel objet ordinateur dans l'OU cible
+             New-ADComputer -Name $ComputerName `
+               -Path $TargetOU `
+               -Enabled $true `
+            
+
+            Write-Host "L'ordinateur $ComputerName a été créé dans $TargetOU." -ForegroundColor Green
+        }
+    } catch {
+        Write-Host "Erreur lors de la création de l'ordinateur $ComputerName : $_" -ForegroundColor Red
+    }
+}
