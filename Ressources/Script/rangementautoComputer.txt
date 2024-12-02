@@ -1,0 +1,39 @@
+# Importer le module Active Directory si nécessaire
+If (-not (Get-Module -Name ActiveDirectory)) {
+    Import-Module ActiveDirectory
+}
+
+# Définir les chemins des OUs pour les serveurs et les laptops
+$OU_Server = OU=Server,OU=COMPUTER,DC=billu,DC=remindme,DC=lan
+$OU_PCStandard = OU=PC_Standard,OU=COMPUTER,DC=billu,DC=remindme,DC=lan
+
+# Obtenir tous les ordinateurs dans le domaine
+$Computers = Get-ADComputer -Filter  -SearchBase CN=Computers,DC=billu,DC=remindme,DC=lan
+
+# Boucle à travers chaque ordinateur et déplacer dans l'OU appropriée
+foreach ($Computer in $Computers) {
+    $TargetPath = 
+
+    # Vérifier si le nom de l'ordinateur contient SRV (serveur)
+    if ($Computer.Name -like SRV) {
+        $TargetPath = $OU_Server
+    }
+    # Vérifier si le nom de l'ordinateur contient PC (PC standard)
+    elseif ($Computer.Name -like *PC*) {
+        $TargetPath = $OU_PCStandard
+    }
+    
+    # Si une destination a été définie (l'ordinateur correspond à un critère)
+    if ($TargetPath) {
+        try {
+            # Déplacer l'ordinateur dans l'OU appropriée
+            Move-ADObject -Identity $Computer.DistinguishedName -TargetPath $TargetPath -Confirm$false
+            Write-Host L'ordinateur $($Computer.Name) a été déplacé dans $TargetPath -ForegroundColor Green
+        } catch {
+            Write-Host Erreur lors du déplacement de l'ordinateur $($Computer.Name)  $_ -ForegroundColor Red
+        }
+    }
+    else {
+        Write-Host L'ordinateur $($Computer.Name) ne correspond à aucun critère (SRV ou LAPTOP). -ForegroundColor Yellow
+    }
+}
