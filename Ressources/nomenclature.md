@@ -36,17 +36,19 @@ Ex : Alban Dumas = alban.dumas@BillU.fr
 (Departement_Type d'appareil_MarquePC_NomduPC) en sachant que nous avons 9 départements
 
                                           -Département-
-1) (DL)   Développement logiciel
-2) (CRP) Communication et Relations publiques
-3) (DJ)    Département Juridique
-4) (DL)   Développement logiciel
-5) (D)      Direction
-6) (DSI)   DSI
-7) (FC)    Finance et Comptabilité
-8) (QHSE) QHSE
-9) (SC)    Service Commercial
-10) (SR)     Service recrutement
-11) (CRP)  Communication et Relations publiques
+Departement 	Raccourcis
+Communication et Relations publiques	CRP
+Département Juridique	DJU
+Développement logiciel	DLO
+Direction	DIR
+DSI	DSI
+Finance et Comptabilité	FCO
+QHSE	QHS
+Service Commercial	SCO
+Service recrutement	SRE
+Serveur SRV
+
+
 
 Type d’appareil : 
 
