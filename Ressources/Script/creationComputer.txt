@@ -14,27 +14,20 @@ If (-not (Get-Module -Name ActiveDirectory)) {
 
 $File = "$FilePath\ListCOMPUTER.txt"
 
-
-# Définir le chemin de l'OU cible (PC_Standard)
-$TargetOU = "OU=PC_Standard,OU=COMPUTER,
-
-### Initialisation
-
-$FilePath = [System.IO.Path]::GetDirectoryName($MyInvocation.MyCommand.Definition)
-$DomainDN = (Get-ADDomain).DistinguishedName
-
-# Importer le module Active Directory si nécessaire
-If (-not (Get-Module -Name ActiveDirectory)) {
-    Import-Module ActiveDirectory
+# Définir les préfixes et leurs OUs cibles
+$DepartmentOUs = @{
+    "CRP" = "OU=Communication et Relations publiques,OU=COMPUTER,DC=wilder,DC=lan"
+    "DJU" = "OU=Département Juridique,OU=COMPUTER,DC=wilder,DC=lan"
+    "DLO" = "OU=Développement logiciel,OU=COMPUTER,DC=wilder,DC=lan"
+    "DIR" = "OU=Direction,OU=COMPUTER,DC=wilder,DC=lan"
+    "DSI" = "OU=DSI,OU=COMPUTER,DC=wilder,DC=lan"
+    "FCO" = "OU=Finance et Comptabilité,OU=COMPUTER,DC=wilder,DC=lan"
+    "QHS" = "OU=QHSE,OU=COMPUTER,DC=wilder,DC=lan"
+    "SCO" = "OU=Service Commercial,OU=COMPUTER,DC=wilder,DC=lan"
+    "SRE" = "OU=Service recrutement,OU=COMPUTER,DC=wilder,DC=lan"
+    "SRV" = "OU=Serveur,OU=COMPUTER,DC=wilder,DC=lan"
 }
 
-### Parametre(s) à modifier
-
-$File = "$FilePath\ListCOMPUTER.txt"
-
-
-# Définir le chemin de l'OU cible (PC_Standard)
-$TargetOU = "OU=PC_Standard,OU=COMPUTER,DC=billu,DC=remindme,DC=lan"
 
 # Charger la liste des ordinateurs depuis le fichier texte
 $ComputersFile = "$FilePath\ListCOMPUTER.txt"  
@@ -48,32 +41,17 @@ foreach ($ComputerName in $ComputersToCreate) {
         if ($ExistingComputer) {
             Write-Host "L'ordinateur $ComputerName existe déjà dans l'Active Directory." -ForegroundColor Yellow
         } else {
-            # Créer un nouvel objet ordinateur dans l'OU cible
-             New-ADComputer -Name $ComputerName `
-               -Path $TargetOU `
-               -Enabled $true `
-            
+        
+           # Extraire le préfixe des 3 premiers caractères du nom de l'ordinateur
+        $Prefix = $ComputerName.Substring(0, 3).ToUpper()
 
-            Write-Host "L'ordinateur $ComputerName a été créé dans $TargetOU." -ForegroundColor Green
-        }
-    } catch {
-        Write-Host "Erreur lors de la création de l'ordinateur $ComputerName : $_" -ForegroundColor Red
-    }
+            # Vérifier si le préfixe correspond à un département
+           if ($DepartmentOUs.ContainsKey($Prefix)) {
+    $TargetOU = $DepartmentOUs[$Prefix]
+} else {
+    # Si le préfixe ne correspond à aucun département, utiliser une OU par défaut comme 'OU=Autres'
+    $TargetOU = "OU=COMPUTER,DC=wilder,DC=lan"
 }
-"
-
-# Charger la liste des ordinateurs depuis le fichier texte
-$ComputersFile = "$FilePath\ListCOMPUTER.txt"  
-$ComputersToCreate = Get-Content -Path $ComputersFile
-
-# Boucle à travers chaque ordinateur et création dans l'OU cible
-foreach ($ComputerName in $ComputersToCreate) {
-    try {
-        # Vérifier si l'ordinateur existe déjà
-        $ExistingComputer = Get-ADComputer -Filter {Name -eq $ComputerName} -ErrorAction SilentlyContinue
-        if ($ExistingComputer) {
-            Write-Host "L'ordinateur $ComputerName existe déjà dans l'Active Directory." -ForegroundColor Yellow
-        } else {
             # Créer un nouvel objet ordinateur dans l'OU cible
              New-ADComputer -Name $ComputerName `
                -Path $TargetOU `
