@@ -9,11 +9,12 @@ Le nom de VM est crée de la manière suivante :
 G<x>-<Nomdelavm><rôle>
 
 1) G1-Wserver2022-DHCP
-2)  G1- Wserver2022-ADDS
+2)  G1- Wserver2022-ADDS : 172.19.1.41
 3)  G1-WServer-Exchange ou Cloud Microsoft365
 4) G1-Linux-Apache-Serveurweb
 5) G1-BackupServeur
 6) G1-Firewall
+7) Debian : 172.19.1.49
 
    
 
