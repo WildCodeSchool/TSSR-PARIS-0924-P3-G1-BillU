@@ -36,18 +36,18 @@ Ex : Alban Dumas = alban.dumas@BillU.fr
 (Departement_Type d'appareil_MarquePC_NomduPC) en sachant que nous avons 9 départements
 
                                           -Département-
-Departement 	Raccourcis
-Communication et Relations publiques	CRP
-Département Juridique	DJU
-Développement logiciel	DLO
-Direction	DIR
-DSI	DSI
-Finance et Comptabilité	FCO
-QHSE	QHS
-Service Commercial	SCO
-Service recrutement	SRE
-Serveur SRV
-
+| Département                       | Raccourcis |
+|------------------------------------|------------|
+| Communication et Relations publiques | CRP        |
+| Département Juridique              | DJU        |
+| Développement logiciel             | DLO        |
+| Direction                          | DIR        |
+| DSI                                | DSI        |
+| Finance et Comptabilité            | FCO        |
+| QHSE                               | QHS        |
+| Service Commercial                 | SCO        |
+| Service recrutement                | SRE        |
+| Serveur                            | SRV        |
                                         - MArque des PC -
 TOSHIBA TOSH
 LENOVO LNVO
