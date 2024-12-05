@@ -1,0 +1,83 @@
+# Définir le chemin du fichier CSV avec gestion des accents et caractères spéciaux
+$FilePath = [System.IO.Path]::GetDirectoryName($MyInvocation.MyCommand.Definition)
+$File = "$FilePath\Rangement.txt"  # Nom du fichier CSV
+
+# Importer les données du fichier CSV avec l'encodage UTF-8
+$csvData = Import-Csv -Path $File -Delimiter ";" -Encoding UTF8
+
+# Fonction pour ajouter un utilisateur au groupe
+function Add-UserToGroup {
+    param (
+        [string]$UserName,
+        [string]$GroupName
+    )
+    try {
+        # Vérifier si l'utilisateur existe déjà dans le groupe
+        $groupMembers = Get-ADGroupMember -Identity "$GroupName" -ErrorAction SilentlyContinue
+        $user = Get-ADUser -Filter {SamAccountName -eq $UserName}
+        
+        if ($user) {
+            if ($groupMembers -contains $user) {
+                Write-Host "L'utilisateur $UserName est déjà membre du groupe $GroupName" -ForegroundColor Yellow
+            } else {
+                # Ajouter l'utilisateur au groupe
+                Add-ADGroupMember -Identity "$GroupName" -Members $user
+                Write-Host "L'utilisateur $UserName a été ajouté au groupe $GroupName" -ForegroundColor Green
+            }
+        } else {
+            Write-Host "Utilisateur $UserName non trouvé dans AD" -ForegroundColor Red
+        }
+    } catch {
+        Write-Host "Erreur lors de l'ajout de l'utilisateur $UserName au groupe $GroupName : $_" -ForegroundColor Red
+    }
+}
+
+# Fonction pour ajouter un ordinateur au groupe
+function Add-ComputerToGroup {
+    param (
+        [string]$ComputerName,
+        [string]$GroupName
+    )
+    try {
+        # Vérifier si l'ordinateur existe déjà dans le groupe
+        $groupMembers = Get-ADGroupMember -Identity "$GroupName" -ErrorAction SilentlyContinue
+        $computer = Get-ADComputer -Filter {Name -eq $ComputerName}
+
+        if ($computer) {
+            if ($groupMembers -contains $computer) {
+                Write-Host "L'ordinateur $ComputerName est déjà membre du groupe $GroupName" -ForegroundColor Yellow
+            } else {
+                # Ajouter l'ordinateur au groupe
+                Add-ADGroupMember -Identity "$GroupName" -Members $computer
+                Write-Host "L'ordinateur $ComputerName a été ajouté au groupe $GroupName" -ForegroundColor Green
+            }
+        } else {
+            Write-Host "Ordinateur $ComputerName non trouvé dans AD" -ForegroundColor Red
+        }
+    } catch {
+        Write-Host "Erreur lors de l'ajout de l'ordinateur $ComputerName au groupe $GroupName : $_" -ForegroundColor Red
+    }
+}
+
+# Boucle pour traiter chaque ligne du fichier CSV
+foreach ($line in $csvData) {
+    $userFirstName = $line.Prenom
+    $userLastName = $line.Nom
+    $userName = "$userFirstName $userLastName"
+    $userSamAccountName = $line.Prenom.Substring(0,1) + $line.Nom  # Utiliser un format de SamAccountName, ici 'Jfremor'
+    
+    # Récupérer les groupes pour l'utilisateur
+    $userGroupPrefix = "User-" + $line.Service
+    $userGroup = $userGroupPrefix # Pas besoin de nettoyage ici
+
+    # Ajouter l'utilisateur au groupe correspondant
+    Add-UserToGroup -UserName $userSamAccountName -GroupName $userGroup
+
+    # Récupérer le groupe pour l'ordinateur
+    $computerName = $line.'PC STANDARD'
+    $computerGroupPrefix = "PC-" + $line.Service
+    $computerGroup = $computerGroupPrefix  # Pas besoin de nettoyage ici
+
+    # Ajouter l'ordinateur au groupe correspondant
+    Add-ComputerToGroup -ComputerName $computerName -GroupName $computerGroup
+}
