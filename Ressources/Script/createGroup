@@ -1,0 +1,54 @@
+####################################################################################################
+#                                                                                                  #
+#   Création des groupes AD automatiquement à partir d'un fichier CSV avec attribution à une OU    #
+#                                                                                                  #
+####################################################################################################
+
+
+### Initialisation
+
+$FilePath = [System.IO.Path]::GetDirectoryName($MyInvocation.MyCommand.Definition)
+$DomainDN = (Get-ADDomain).DistinguishedName
+$File = "$FilePath\ListGroup.txt" 
+### Fonction pour créer des groupes AD
+
+### Fonction pour créer des groupes AD
+function CreateGroup
+{
+    param (
+        [Parameter(Mandatory=$True, Position=0)][String]$GroupName,
+        [Parameter(Mandatory=$True, Position=1)][String]$OUSecondaire,
+        [Parameter(Mandatory=$True, Position=2)][String]$OUPrincipal
+    )
+    # Chemin complet où le groupe sera créé si il n'existe pas
+    $DNSearchBase = "OU=$OUSecondaire,OU=$OUPrincipal,$DomainDN"
+
+    try {
+        # Vérification si le groupe existe dans le chemin complet
+        $ExistingGroup = Get-ADGroup -Filter {Name -eq $GroupName} -SearchBase $DNSearchBase
+
+        if ($ExistingGroup) {
+            Write-Host "Le groupe '$GroupName' existe déjà dans '$DNSearchBase'." -ForegroundColor Red
+        } else {
+            # Si le groupe n'existe pas, le créer dans le chemin complet
+            New-ADGroup -Name $GroupName -Path $DNSearchBase -GroupScope Global -PassThru
+            Write-Host "Le groupe '$GroupName' a été créé dans '$DNSearchBase'." -ForegroundColor Green
+        }
+    }
+    catch {
+        Write-Host "Erreur lors de la création ou vérification du groupe '$GroupName'. Détails: $_" -ForegroundColor Yellow
+    }
+}
+
+### Vérifier si le module ActiveDirectory est chargé, sinon l'importer
+If (-not (Get-Module -Name ActiveDirectory)) {
+    Import-Module ActiveDirectory
+}
+
+### Importer les données du fichier CSV
+$Groups = Import-Csv -Path $File -Delimiter ";" -Header "GroupName", "OUSecondaire", "OUPrincipal"
+
+### Créer les groupes à partir des données du CSV
+foreach ($Group in $Groups) {
+    CreateGroup -GroupName $Group.GroupName -OUSecondaire $Group.OUSecondaire -OUPrincipal $Group.OUPrincipal
+}
