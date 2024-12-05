@@ -1,0 +1,163 @@
+Civilité;Prenom;Nom;Societe;Site;Departement;Service;fonction;Manager-Prenom;Manager-Nom;Nom de PC;Marque PC;Date de naissance;Telephone fixe;Telephone portable;Télétravail;PC STANDARD
+M.;Alban;Dumas;BillU;Paris;Communication et Relations publiques;Relation Médias;Rédacteur;Aurelien;Brunet;PA78671;HP;02/12/1987;197796902;615034263;Non;CRP-PC-HP-PA78671
+M.;Aurelien;Brunet;BillU;Paris;Communication et Relations publiques;-;Responsable relation média;Noémie;Leloir;PA68867;DELL;12/03/1985;114409115;778858220;Non;CRP-PC-DELL-PA68867
+M.;Corentin;Arnaud;BillU;Paris;Communication et Relations publiques;Communication interne;Community manager;Gaelle;Colin;PA11094;DELL;01/01/1991;148522008;710630503;Non;CRP-PC-DELL-PA11094
+M.;Diego;Aubert;BillU;Paris;Communication et Relations publiques;Communication interne;Community manager;Gaelle;Colin;PA19149;DELL;14/05/1989;198004015;736672209;Non;CRP-PC-DELL-PA19149
+M.;Erwan;Faure;BillU;Paris;Communication et Relations publiques;Communication interne;Chargé de communication;Gaelle;Colin;PA10218;;17/06/1993;127364911;707561174;Non;CRP-PC---PA10218
+Mme;Felianne;Fernandez;BillU;Paris;Communication et Relations publiques;Relation Médias;Rédacteur;Aurelien;Brunet;PA92969;DELL;17/11/1992;122223912;655605121;Non;CRP-PC-DELL-PA92969
+Mme;Gaelle;Colin;BillU;Paris;Communication et Relations publiques;-;Responsable communication;Noémie;Leloir;PA23669;DELL;23/06/1999;146389837;625101497;Non;CRP-PC-DELL-PA23669
+M.;Gaetan;Roussel;BillU;Paris;Communication et Relations publiques;Gestion des marques;Webmaster;Gaelle;Colin;PA74884;DELL;27/10/1994;181708327;622836246;Non;CRP-PC-DELL-PA74884
+Mme;Ines;Henry;BillU;Paris;Communication et Relations publiques;Gestion des marques;Webmaster;Gaelle;Colin;PA39469;DELL;05/01/2000;138585445;685150170;Non;CRP-PC-DELL-PA39469
+Mme;Laurence;Guerin;BillU;Paris;Communication et Relations publiques;Gestion des marques;Designer graphique;Gaelle;Colin;PA63117;DELL;20/07/1990;114806301;642681764;Non;CRP-PC-DELL-PA63117
+M.;Loic;Blanc;BillU;Paris;Communication et Relations publiques;Communication interne;Chargé en droit de la communication;Gaelle;Colin;PA88356;DELL;03/11/1982;160352162;747070420;Non;CRP-PC-DELL-PA88356
+M.;Lukas;Rousseau;BillU;Paris;Communication et Relations publiques;Gestion des marques;photographe;Gaelle;Colin;PA74987;DELL;19/04/1993;199526389;742450021;Non;CRP-PC-DELL-PA74987
+M.;Mathias;Muller;BillU;Paris;Communication et Relations publiques;Gestion des marques;Community manager;Gaelle;Colin;PA63498;DELL;08/12/2000;112691924;695993512;Non;CRP-PC-DELL-PA63498
+Mme;Noémie;Leloir;BillU;Paris;Communication et Relations publiques;-;Directrice Communication et Relations publiques;Camille;Martin;PA68385;DELL;14/11/1994;165300831;628752957;Non;CRP-PC-DELL-PA68385
+Mme;Régina;Illaconnesé;BillU;Paris;Communication et Relations publiques;Relation Médias;Chargée relation presse;Aurelien;Brunet;PA99009;DELL;16/11/1994;155106945;643567057;Non;CRP-PC-DELL-PA99009
+Mme;Sophia;Kusmérowic;BillU;Paris;Communication et Relations publiques;Relation Médias;Chargée relation presse;Aurelien;Brunet;PA76764;DELL;10/08/1988;134259365;732836175;Non;CRP-PC-DELL-PA76764
+Mme;Faustine;Denis;BillU;Paris;Département Juridique;Propriété intellectuelle;Juriste;Fauve;Hôlth;PA51856;HP;15/03/1983;102226399;-;Non;DJU-PC-HP-PA51856
+Mme;Fauve;Hôlth;BillU;Paris;Département Juridique;-;Directeur juridique;Camille;Martin;PA87056;LENOVO;08/01/1988;169521011;757881221;Non;DJU-PC-LNVO-PA87056
+Mme;Hélène;Cault;BillU;Paris;Département Juridique;Propriété intellectuelle;Juriste;Fauve;Hôlth;PA26363;LENOVO;30/06/1985;155916179;-;Non;DJU-PC-LNVO-PA26363
+M.;Remi;Advezekt;BillU;Paris;Département Juridique;Protection des données et conformité;Juriste;Fauve;Hôlth;PA12540;LENOVO;28/05/1997;488168544;-;Non;DJU-PC-LNVO-PA12540
+M.;Robin;Bourgeois;BillU;Paris;Département Juridique;Protection des données et conformité;Juriste;Fauve;Hôlth;PA33490;HP;17/07/1997;130797419;-;Non;DJU-PC-HP-PA33490
+M.;Yann;Boyer;BillU;Paris;Département Juridique;Protection des données et conformité;Juriste;Fauve;Hôlth;PA48690;LENOVO;30/03/1992;198705216;-;Non;DJU-PC-LNVO-PA48690
+M.;Aarav;Gupta;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA24630;HP;30/06/1994;-;-;Non;DLO-PC-HP-PA24630
+M.;Adam;Thomas;BillU;Paris;Développement logiciel;analyse et conception;Développeur;Wilfried;José;PA43813;TOSHIBA;03/03/1993;-;-;Non;DLO-PC-TOSH-PA43813
+Mme;Amélie;Blanchet;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA21577;TOSHIBA;08/08/2001;-;-;Non;DLO-PC-TOSH-PA21577
+Mme;Amélie;Fournier;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA60728;DELL;22/07/1987;-;-;Non;DLO-PC-DELL-PA60728
+Mme;Amira;El-Mahdi;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA55201;TOSHIBA;29/07/1996;-;-;Non;DLO-PC-TOSH-PA55201
+Mme;Angéline;Lefaivre;BillU;Paris;Développement logiciel;Test et qualité;Développeur;Elena;Sánchez;PA21358;LENOVO;04/06/1999;-;-;Non;DLO-PC-LNVO-PA21358
+M.;Arjun;Patel;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA40065;DELL;03/06/2001;-;-;Non;DLO-PC-DELL-PA40065
+Mme;Aurélie;Yosef;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA23575;DELL;23/08/1990;-;-;Non;DLO-PC-DELL-PA23575
+Mme;Aya;Benali;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA77535;DELL;29/10/1987;-;-;Non;DLO-PC-DELL-PA77535
+M.;Benjamin;Schmitt;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA33002;DELL;10/01/1986;-;-;Non;DLO-PC-DELL-PA33002
+Mme;Camille;Bôrner;BillU;Paris;Développement logiciel;Test et qualité;Développeur;Elena;Sánchez;PA46875;LENOVO;07/06/2000;-;-;Non;DLO-PC-LNVO-PA46875
+Mme;Carla;Pelcaut;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA77321;DELL;07/12/1988;-;-;Non;DLO-PC-DELL-PA77321
+Mme;Charlotte;Giroux;BillU;Paris;Développement logiciel;analyse et conception;Développeur;Wilfried;José;PA99876;LENOVO;14/12/1998;-;-;Non;DLO-PC-LNVO-PA99876
+Mme;Chloé;Recteur;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA69037;HP;01/06/1993;-;-;Non;DLO-PC-HP-PA69037
+Mme;Clara;Garcia;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA48530;LENOVO;25/12/1993;-;-;Non;DLO-PC-LNVO-PA48530
+M.;David;Vidal;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA59874;TOSHIBA;16/12/1985;-;-;Non;DLO-PC-TOSH-PA59874
+M.;Dmitri;Ivanov;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA75404;DELL;13/09/1996;-;-;Non;DLO-PC-DELL-PA75404
+Mme;Elena;Sánchez;BillU;Paris;Développement logiciel;Test et qualité;Responsable test et qualité;Sofia;Rossi;PA83940;LENOVO;23/12/1986;107161739;628631838;Non;DLO-PC-LNVO-PA83940
+M.;Emilien;Gerot;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA51163;LENOVO;31/07/1999;-;-;Non;DLO-PC-LNVO-PA51163
+Mme;Emma;Leclerc;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA19161;LENOVO;06/09/1986;-;-;Non;DLO-PC-LNVO-PA19161
+Mme;Emmanuelle;Le Doux;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA95467;DELL;31/10/1982;-;-;Non;DLO-PC-DELL-PA95467
+M.;Eshan;Khan;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA34827;TOSHIBA;30/01/1994;-;-;Non;DLO-PC-TOSH-PA34827
+M.;Etienne;Legrand;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA86254;HP;02/03/2000;-;-;Non;DLO-PC-HP-PA86254
+Mme;Eva;Simonet;BillU;Paris;Développement logiciel;Test et qualité;Développeur;Elena;Sánchez;PA81191;LENOVO;20/01/1994;-;-;Non;DLO-PC-LNVO-PA81191
+M.;Fabio;Romano;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA90927;HP;13/08/1995;-;-;Non;DLO-PC-HP-PA90927
+M.;Felix;Hoffmann;BillU;Paris;Développement logiciel;analyse et conception;Développeur;Wilfried;José;PA41987;HP;26/08/1987;-;-;Non;DLO-PC-HP-PA41987
+Mme;Fergie;Lork;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA79446;TOSHIBA;26/07/1996;-;-;Non;DLO-PC-TOSH-PA79446
+M.;Florent;Houssay;BillU;Paris;Développement logiciel;analyse et conception;Développeur;Wilfried;José;PA90613;HP;12/10/1993;-;-;Non;DLO-PC-HP-PA90613
+M.;Florian;Rellay;BillU;Paris;Développement logiciel;Développement;Responsable developpement;Sofia;Rossi;PA33002;TOSHIBA;17/05/1991;126036632;749534624;Non;DLO-PC-TOSH-PA33002
+M.;Giovanni;Moretti;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA45337;TOSHIBA;16/01/1995;-;-;Non;DLO-PC-TOSH-PA45337
+M.;Guido;Bianchi;BillU;Paris;Développement logiciel;Test et qualité;Développeur;Elena;Sánchez;PA27339;LENOVO;25/09/1983;-;-;Non;DLO-PC-LNVO-PA27339
+M.;Guillaume;Pierre;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA74884;DELL;04/09/2001;-;-;Non;DLO-PC-DELL-PA74884
+Mme;Hamza;Amari;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA10427;;28/10/1993;-;-;Non;DLO-PC---PA10427
+M.;Hao;Wang;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA70346;DELL;19/07/1984;-;-;Non;DLO-PC-DELL-PA70346
+M.;Henri;Lambert;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA85194;HP;06/08/1997;-;-;Non;DLO-PC-HP-PA85194
+Mme;Ines;Dupont;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA62916;LENOVO;10/10/1997;-;-;Non;DLO-PC-LNVO-PA62916
+Mme;Isabel;Gomez;BillU;Paris;Développement logiciel;Recherche et Prototype;Développeur;Niko;Gruber;PA21386;HP;23/06/1984;158890916;601928581;Non;DLO-PC-HP-PA21386
+Mme;Jaxon;Dicker Brown;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA78780;DELL;04/02/1995;-;-;Non;DLO-PC-DELL-PA78780
+M.;Jean;Rolland;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA43813;DELL;16/03/1997;-;-;Non;DLO-PC-DELL-PA43813
+M.;Jéremy;Martelant;BillU;Paris;Développement logiciel;analyse et conception;Développeur;Wilfried;José;PA23575;LENOVO;30/06/1989;-;-;Non;DLO-PC-LNVO-PA23575
+Mme;Julia;Schneider;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA43252;DELL;02/09/1997;-;-;Non;DLO-PC-DELL-PA43252
+M.;Julien;Lefebvre;BillU;Paris;Développement logiciel;Recherche et Prototype;Développeur;Niko;Gruber;PA67334;LENOVO;10/12/2001;182968579;714669952;Non;DLO-PC-LNVO-PA67334
+M.;Kaito;Takahashi;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA92121;LENOVO;04/12/1996;-;-;Non;DLO-PC-LNVO-PA92121
+M.;Kevin;Dumont;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA32275;DELL;27/10/1986;-;-;Non;DLO-PC-DELL-PA32275
+M.;Killian;Masson;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA34551;LENOVO;06/10/2000;-;-;Non;DLO-PC-LNVO-PA34551
+M.;Klaus;Becker;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA52587;LENOVO;18/07/2000;-;-;Non;DLO-PC-LNVO-PA52587
+Mme;Laura;Lemeunier;BillU;Paris;Développement logiciel;Test et qualité;Développeur;Elena;Sánchez;PA46875;HP;30/04/2001;-;-;Non;DLO-PC-HP-PA46875
+M.;Léo;Dubois;BillU;Paris;Développement logiciel;Test et qualité;Développeur;Elena;Sánchez;PA84928;LENOVO;07/12/1997;-;-;Non;DLO-PC-LNVO-PA84928
+Mme;Lina;Müller;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA25185;DELL;02/10/1992;-;-;Non;DLO-PC-DELL-PA25185
+M.;Luc;Martin;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA94045;TOSHIBA;23/06/1995;-;-;Non;DLO-PC-TOSH-PA94045
+M.;Luca;Duval;BillU;Paris;Développement logiciel;analyse et conception;Développeur;Wilfried;José;PA18845;LENOVO;25/09/1987;-;-;Non;DLO-PC-LNVO-PA18845
+Mme;Marie;Dufour;BillU;Paris;Développement logiciel;Test et qualité;Développeur;Elena;Sánchez;PA72687;LENOVO;22/05/2000;-;-;Non;DLO-PC-LNVO-PA72687
+M.;Martin;Nguyen;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA57906;DELL;18/07/1998;-;-;Non;DLO-PC-DELL-PA57906
+M.;Matteo;Ferrari;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA96975;DELL;23/04/1999;-;-;Non;DLO-PC-DELL-PA96975
+M.;Maximilian;Wagner;BillU;Paris;Développement logiciel;Test et qualité;Développeur;Elena;Sánchez;PA53201;HP;29/11/1984;-;-;Non;DLO-PC-HP-PA53201
+Mme;Mia;Johnson;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA67552;DELL;07/02/1992;-;-;Non;DLO-PC-DELL-PA67552
+M.;Miguel;Hernandez;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA52831;DELL;12/06/1982;-;-;Non;DLO-PC-DELL-PA52831
+M.;Morgan;O'Flaherty;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA36514;DELL;22/10/1983;-;-;Non;DLO-PC-DELL-PA36514
+Mme;Nadège;Rouiller;BillU;Paris;Développement logiciel;analyse et conception;Développeur;Wilfried;José;PA36514;LENOVO;05/12/1983;-;-;Non;DLO-PC-LNVO-PA36514
+M.;Niamh;Fitzpatrick;BillU;Paris;Développement logiciel;Test et qualité;Développeur;Elena;Sánchez;PA31784;TOSHIBA;11/04/1987;-;-;Non;DLO-PC-TOSH-PA31784
+M.;Niko;Gruber;BillU;Paris;Développement logiciel;Recherche et Prototype;Responsable Recherche;Sofia;Rossi;PA82471;HP;17/11/1993;148808015;653178244;Non;DLO-PC-HP-PA82471
+Mme;Nina;Ledoux;BillU;Paris;Développement logiciel;Test et qualité;Développeur;Elena;Sánchez;PA31356;LENOVO;21/04/1998;-;-;Non;DLO-PC-LNVO-PA31356
+Mme;Nora;O'Sullivan;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA12745;DELL;15/01/1988;-;-;Non;DLO-PC-DELL-PA12745
+M.;Norman;Robin;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA57512;HP;23/09/1993;-;-;Non;DLO-PC-HP-PA57512
+M.;Olivetti;Del Roy;BillU;Paris;Développement logiciel;Test et qualité;Développeur;Elena;Sánchez;PA78411;HP;20/03/1989;-;-;Non;DLO-PC-HP-PA78411
+M.;Oscar;Gautier;BillU;Paris;Développement logiciel;analyse et conception;Développeur;Wilfried;José;PA72016;HP;15/06/1990;-;-;Non;DLO-PC-HP-PA72016
+Mme;Rafaella;Martinez;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA99298;DELL;30/04/1993;-;-;Non;DLO-PC-DELL-PA99298
+M.;Sacha;Sacha-David;BillU;Paris;Développement logiciel;analyse et conception;Développeur;Wilfried;José;PA31686;HP;13/08/1991;-;-;Non;DLO-PC-HP-PA31686
+M.;Sacha;Lopez;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA19651;LENOVO;10/10/1997;-;-;Non;DLO-PC-LNVO-PA19651
+M.;Samuel;Clement;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA45337;DELL;07/01/1992;-;-;Non;DLO-PC-DELL-PA45337
+Mme;Sara;Besnheard;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA15299;HP;04/09/1988;-;-;Non;DLO-PC-HP-PA15299
+M.;Seamus;O'Connor;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA48799;HP;24/07/1987;-;-;Non;DLO-PC-HP-PA48799
+M.;Sébastien;Durand;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA27630;DELL;25/11/1993;-;-;Non;DLO-PC-DELL-PA27630
+M.;Simon;Gauthier;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA28156;HP;01/11/1992;-;-;Non;DLO-PC-HP-PA28156
+Mme;Sofia;Rossi;BillU;Paris;Développement logiciel;-;Directeur Développement logiciel;Camille;Martin;PA93655;TOSHIBA;21/09/1998;185544131;730413931;Non;DLO-PC-TOSH-PA93655
+Mme;Sophie;Mercier--Le-Coutourd;BillU;Paris;Développement logiciel;Recherche et Prototype;Développeur;Niko;Gruber;PA27339;HP;11/03/1992;138775905;704209714;Non;DLO-PC-HP-PA27339
+Mme;Stéphanie;Le Kerbriault;BillU;Paris;Développement logiciel;analyse et conception;Développeur;Wilfried;José;PA42543;TOSHIBA;17/03/1983;-;-;Non;DLO-PC-TOSH-PA42543
+M.;Tariq;Aziz;BillU;Paris;Développement logiciel;Test et qualité;Développeur;Elena;Sánchez;PA31010;LENOVO;12/03/1989;-;-;Non;DLO-PC-LNVO-PA31010
+M.;Tristan;Fontaine;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA96447;DELL;25/02/1988;-;-;Non;DLO-PC-DELL-PA96447
+M.;Tristan;Le Petit;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA74440;HP;14/10/1986;-;-;Non;DLO-PC-HP-PA74440
+M.;Victor;Chevalier;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA32765;DELL;20/06/1983;-;-;Non;DLO-PC-DELL-PA32765
+M.;Vincent;Gerard;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA52948;LENOVO;18/09/1988;-;-;Non;DLO-PC-LNVO-PA52948
+M.;Wilfried;José;BillU;Paris;Développement logiciel;analyse et conception;Responsable analyse et conception;Sofia;Rossi;PA14433;LENOVO;29/06/1987;188064257;773629374;Non;DLO-PC-LNVO-PA14433
+M.;William;Lemaire;BillU;Paris;Développement logiciel;analyse et conception;Développeur;Wilfried;José;PA45623;LENOVO;10/08/1998;-;-;Non;DLO-PC-LNVO-PA45623
+Mme;Yara;Abadi;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA58412;LENOVO;11/08/1985;-;-;Non;DLO-PC-LNVO-PA58412
+M.;Yiannis;Papadopoulos;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA57679;TOSHIBA;27/04/1991;-;-;Non;DLO-PC-TOSH-PA57679
+M.;Yohan;Pillet;BillU;Paris;Développement logiciel;Développement;Développeur;Florian;Rellay;PA83956;DELL;26/12/1998;-;-;Non;DLO-PC-DELL-PA83956
+M.;Youssef;Al-Masri;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA51530;HP;29/06/1983;-;-;Non;DLO-PC-HP-PA51530
+Mme;Zoe;Smith;BillU;Paris;Développement logiciel;Développement;Développeur;Hana;Kim;PA53861;DELL;19/06/1998;-;-;Non;DLO-PC-DELL-PA53861
+M.;Alexis;Bernard;BillU;Paris;Direction;-;Directeur adjoint;Camille;Martin;PA89346;DELL;11/04/1991;187246457;738812832;Non;DIR-PC-DELL-PA89346
+M.;Antoine;Dubois;BillU;Paris;Direction;-;Assistant de direction;Camille;Martin;PA75792;TOSHIBA;12/12/1998;112092812;757172438;Non;DIR-PC-TOSH-PA75792
+Mme;Camille;Martin;BillU;Paris;Direction;-;CEO;-;;PA12959;TOSHIBA;09/05/1985;160409379;653791741;Non;DIR-PC-TOSH-PA12959
+M.;Aaron;Roche;BillU;Paris;DSI;Exploitation;Technicien d'exploitation;Anthony;Noel;PA76820;DELL;20/10/2001;400609816;673124437;Non;DSI-PC-DELL-PA76820
+M.;Alan;Meunier;BillU;Paris;DSI;Administration Systèmes et Réseaux;Technicien réseaux;Anthony;Noel;PA21577;DELL;02/08/1995;194124692;687340310;Non;DSI-PC-DELL-PA21577
+M.;Anthony;Noel;BillU;Paris;DSI;-;Directeur des systèmes d'information;Camille;Martin;PA85785;DELL;31/10/1990;174752256;663073894;Non;DSI-PC-DELL-PA85785
+M.;Bryan;Perez;BillU;Paris;DSI;Exploitation;Technicien d'exploitation;Anthony;Noel;PA78323;DELL;22/05/1993;131204687;664331983;Non;DSI-PC-DELL-PA78323
+Mme;Ines;Roger;BillU;Paris;DSI;Exploitation;Technicien de maintenance;Anthony;Noel;PA69442;DELL;13/12/1997;490987479;617155871;Non;DSI-PC-DELL-PA69442
+M.;Julien;Duran;BillU;Paris;DSI;Exploitation;Technicien de maintenance;Anthony;Noel;PA84572;DELL;01/05/1989;137916836;704153936;Non;DSI-PC-DELL-PA84572
+Mme;Juliette;Roux;BillU;Paris;DSI;Développement et Intégration;Développeur;Anthony;Noel;PA73994;DELL;30/05/1985;134118694;665692415;Non;DSI-PC-DELL-PA73994
+Mme;Juliette;Roy;BillU;Paris;DSI;Développement et Intégration;Développeur;Anthony;Noel;PA83956;DELL;12/11/1991;104199164;637045158;Non;DSI-PC-DELL-PA83956
+Mme;Marie;Meyer;BillU;Paris;DSI;Administration Systèmes et Réseaux;Technicien Systèmes;Anthony;Noel;PA33490;DELL;27/12/1997;134344137;717065142;Non;DSI-PC-DELL-PA33490
+M.;Mathis;Mercier;BillU;Paris;DSI;Administration Systèmes et Réseaux;Technicien réseaux;Anthony;Noel;PA30819;DELL;21/08/1993;466874640;745093669;Non;DSI-PC-DELL-PA30819
+M.;Romain;Vincent;BillU;Paris;DSI;Développement et Intégration;Intégrateur;Anthony;Noel;PA52103;DELL;30/08/1987;192883550;770092044;Non;DSI-PC-DELL-PA52103
+M.;Tom;Morel;BillU;Paris;DSI;Support;Hotliner;Anthony;Noel;PA32765;DELL;31/03/2001;181640031;666489658;Non;DSI-PC-DELL-PA32765
+M.;Alex;Barbier;BillU;Paris;Finance et Comptabilité;Finance;Analyste financier;Yacine;Hamad;PA34551;TOSHIBA;21/10/1992;153906457;-;Non;FCO-PC-TOSH-PA34551
+M.;Maël;Laurent;BillU;Paris;Finance et Comptabilité;Service Comptabilité;Comptable;Yacine;Hamad;PA30790;HP;14/08/1987;157784039;-;Non;FCO-PC-HP-PA30790
+Mme;Manon;Brun;BillU;Paris;Finance et Comptabilité;Service Comptabilité;Comptable;Yacine;Hamad;PA68447;LENOVO;11/06/1998;460954183;-;Non;FCO-PC-LNVO-PA68447
+M.;Matteo;Simon;BillU;Paris;Finance et Comptabilité;Finance;Controleur de gestion;Yacine;Hamad;PA57512;HP;28/11/1986;175097244;-;Non;FCO-PC-HP-PA57512
+M.;Maxime;Lefebvre;BillU;Paris;Finance et Comptabilité;Service Comptabilité;Comptable;Yacine;Hamad;PA56314;DELL;26/05/2000;107939301;-;Non;FCO-PC-DELL-PA56314
+Mme;Noémie;Andre;BillU;Paris;Finance et Comptabilité;Finance;Controleur de gestion;Yacine;Hamad;PA12959;TOSHIBA;05/05/1995;109401276;-;Non;FCO-PC-TOSH-PA12959
+M.;Quentin;Bertrand;BillU;Paris;Finance et Comptabilité;Fiscalité;Conseiller en fiscalité;Yacine;Hamad;PA31320;LENOVO;22/08/1982;483436266;-;Non;FCO-PC-LNVO-PA31320
+M.;Yacine;Hamad;BillU;Paris;Finance et Comptabilité;Finance;Directeur financier;Camille;Martin;PA68867;HP;18/10/1992;154314543;648462640;Non;FCO-PC-HP-PA68867
+Mme;Arielle;Leroy;BillU;Paris;QHSE;Contrôle Qualité;Responsable QHSE;Camille;Martin;PA53466;TOSHIBA;14/08/1993;187941494;718694265;Non;QHS-PC-TOSH-PA53466
+M.;Enzo;Petit;BillU;Paris;QHSE;Gestion environnementale;Technicien HSE;Arielle;Leroy;PA74987;LENOVO;24/10/1998;171818675;-;Non;QHS-PC-LNVO-PA74987
+Mme;Louise;Richard;BillU;Paris;QHSE;Certification;Auditeur;Arielle;Leroy;PA81191;LENOVO;29/05/1990;159009944;-;Non;QHS-PC-LNVO-PA81191
+M.;Lucas;Moraud;BillU;Paris;QHSE;Contrôle Qualité;Animateur sécurité;Arielle;Leroy;PA26363;LENOVO;28/08/1998;108552477;-;Non;QHS-PC-LNVO-PA26363
+M.;Arnoovik;Jlecht;BillU;Paris;Service Commercial;ADV;Gestionnaire ADV;Bastien;Lucas;PA16353;DELL;19/11/2001;124045383;763236659;Non;SCO-PC-DELL-PA16353
+M.;Bastien;Lucas;BillU;Paris;Service Commercial;ADV;Responsable ADV;Pierre;David;PA16564;DELL;16/07/1988;154658546;697336293;Non;SCO-PC-DELL-PA16564
+M.;Charles;Marchand;BillU;Paris;Service Commercial;Service achat;Acheteur;Kylian;Martinez;PA16013;DELL;29/04/1999;167218515;654606027;Non;SCO-PC-DELL-PA16013
+M.;Dorian;Blanchard;BillU;Paris;Service Commercial;B2B;Commercial;Pierre;David;PA82880;DELL;18/08/1991;451967464;655939808;Non;SCO-PC-DELL-PA82880
+M.;Dylan;Marie;BillU;Paris;Service Commercial;Service achat;Acheteur;Kylian;Martinez;PA59874;DELL;30/03/1991;113588016;690730213;Non;SCO-PC-DELL-PA59874
+Mme;Jade;Lefèvre;BillU;Paris;Service Commercial;ADV;Gestionnaire ADV;Bastien;Lucas;PA64810;DELL;16/11/1984;180183734;621673896;Non;SCO-PC-DELL-PA64810
+M.;Jules;Girard;BillU;Paris;Service Commercial;Service Client;Agent;Kylian;Martinez;PA39395;DELL;25/01/1985;163132039;-;Non;SCO-PC-DELL-PA39395
+Mme;Julie;Francois D'Assise;BillU;Paris;Service Commercial;Service Client;Agent;Kylian;Martinez;PA79817;DELL;23/09/1994;420495759;-;Non;SCO-PC-DELL-PA79817
+M.;Kylian;Martinez;BillU;Paris;Service Commercial;Service achat;Responsable achat;Pierre;David;PA19149;DELL;26/08/1988;151530426;696228844;Non;SCO-PC-DELL-PA19149
+Mme;Latifa;Jean-Robert De Boisselier;BillU;Paris;Service Commercial;ADV;Gestionnaire ADV;Bastien;Lucas;PA46917;DELL;02/09/1990;114930105;739063477;Non;SCO-PC-DELL-PA46917
+M.;Nathan;Dupont;BillU;Paris;Service Commercial;B2B;Commercial;Pierre;David;PA12427;DELL;01/02/1992;109336075;662152312;Non;SCO-PC-DELL-PA12427
+Mme;Pauline;Lambert;BillU;Paris;Service Commercial;ADV;Gestionnaire ADV;Bastien;Lucas;PA37602;DELL;10/11/1987;158406170;606722898;Non;SCO-PC-DELL-PA37602
+M.;Pierre;David;BillU;Paris;Service Commercial;-;Directeur commercial;Camille;Martin;PA90233;TOSHIBA;12/05/1997;106664984;734442721;Non;SCO-PC-TOS-PA90233
+M.;Theo;Fournier-Laval;BillU;Paris;Service Commercial;B2B;Commercial;Pierre;David;PA44614;DELL;16/12/1982;181612961;703432899;Non;SCO-PC-DELL-PA44614
+M.;Valentin;Bonnet;BillU;Paris;Service Commercial;B2B;Commercial;Pierre;David;PA90176;DELL;23/02/1987;439648412;799413599;Non;SCO-PC-DELL-PA90176
+Mme;Célia;Da Silva;BillU;Paris;Service recrutement;-;Agent RH;Christophe;Leroux;PA66766;HP;31/07/1986;498537902;-;Non;SRE-PC-HP-PA66766
+M.;Christophe;Leroux;BillU;Paris;Service recrutement;-;Responsable recrutement;Camille;Martin;PA20618;HP;10/05/1992;163902409;784105738;Non;SRE-PC-HP-PA20618
+Mme;Mélanie;Carpentier;BillU;Paris;Service recrutement;-;Agent RH;Christophe;Leroux;PA31784;HP;09/08/1983;183765728;-;Non;SRE-PC-HP-PA31784
+M.;Eden Yagui;Yolou;BillU;Paris;DSI;Administration Systèmes et Réseaux;Technicien réseaux;Anthony;Noel;PA32766;DELL;01/01/1985;123456789;667894561;Non;DSI-PC-DELL-PA32766
+M.;Lassana;Camara;BillU;Paris;DSI;Administration Systèmes et Réseaux;Technicien réseaux;Anthony;Noel;PA32767;DELL;01/01/1985;134567890;698745632;Non;DSI-PC-DELL-PA32767
+M.;Walid;Benzai;BillU;Paris;DSI;Administration Systèmes et Réseaux;Technicien réseaux;Anthony;Noel;PA32768;DELL;01/01/1985;145678912;654123642;Non;DSI-PC-DELL-PA32768
+M.;Francois;Konan;BillU;Paris;DSI;Administration Systèmes et Réseaux;Technicien réseaux;Anthony;Noel;PA32769;DELL;01/01/1985;156789123;701234568;Non;DSI-PC-DELL-PA32769
+M.;Jessy;Fremor;BillU;Paris;DSI;Administration Systèmes et Réseaux;Technicien réseaux;Anthony;Noel;PA32770;DELL;01/01/1985;167891234;745236184;Non;DSI-PC-DELL-PA32770
+Mme;Elghaia;Nait Bouda;BillU;Paris;DSI;Administration Systèmes et Réseaux;Technicien réseaux;Anthony;Noel;PA32771;DELL;01/01/1985;178912345;789653241;Non;DSI-PC-DELL-PA32771
