@@ -6,9 +6,9 @@
 
 ## **Groupes d'utilisateurs et ordinateurs**
 
-| **Département**                               | **Groupe**                                                                                     | **Utilisateur** (1ère lettre du prénom + nom de famille) | **Ordinateur**           |
+| **Département**                               | **Groupe**                                                                                     | **Utilisateur** (1ère lettre du prénom + nom de famille) | **Ordinateur+marque+ref**           |
 |:---------------------------------------------|:---------------------------------------------------------------------------------------------:|:-------------------------------------------------------:|:-------------------------:|
-| **Serveurs Internes (SRV)**                  |                                                                                               | PNOM                                                   | SRV-PC-<marque>-<ref>    |
+| **Serveurs Internes (SRV)**                  |                                                                                               | PNOM                                  | SRV-PC-<marque>-<ref>    |
 | **Communication et RP (CRP)**                | Relation Médias (RME), Communication interne (CIN), Gestion des marques (GMA)                | PNOM                                                   | CRP-PC-<marque>-<ref>    |
 | **Département Juridique (DJU)**              | Propriété intellectuelle (PIN), Droit des sociétés (DSO), Protection des données et conformité (PDC) | PNOM                                                   | DJU-PC-<marque>-<ref>    |
 | **Développement Logiciel (DLO)**             | Développement (DEV), Analyse et conception (ANC), Test et qualité (TEQ), Recherche et Prototype (RPT) | PNOM                                                   | DLO-PC-<marque>-<ref>    |
