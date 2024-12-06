@@ -1,34 +1,36 @@
 
 
 
+
 # **Nomenclature**
 
 ## **Groupes d'utilisateurs et ordinateurs**
 
-| **Groupe**                     | **Utilisateur**             | **Ordinateur**        |
-|:------------------------------:|:---------------------------:|:--------------------:|
-| **Serveurs Internes**          | SI_AccèsStandard           | SI_PcStandard         |
-|                                | SI_AccèsAvancé             | SI_PcAdmin            |
-| **Communication et RP**        | COM_AccèsStandard          | COM_PcStandard        |
-|                                | COM_AccèsAvancé            | COM_PcAdmin           |
-| **Département Juridique**      | JUR_AccèsStandard          | JUR_PcStandard        |
-|                                | JUR_AccèsAvancé            | JUR_PcAdmin           |
-| **Développement Logiciel**     | DEV_AccèsStandard          | DEV_PcStandard        |
-|                                | DEV_AccèsAvancé            | DEV_PcAdmin           |
-| **Direction**                  | DIR_AccèsStandard          | DIR_PcStandard        |
-|                                | DIR_AccèsAvancé            | DIR_PcAdmin           |
-| **DSI**                        | DSI_AccèsStandard          | DSI_PcStandard        |
-|                                | DSI_AccèsAvancé            | DSI_PcAdmin           |
-| **Finance et Comptabilité**    | FIN_AccèsStandard          | FIN_PcStandard        |
-|                                | FIN_AccèsAvancé            | FIN_PcAdmin           |
-| **QHSE (Qualité, Hygiène, Sécurité, Environnement)** | QHSE_AccèsStandard        | QHSE_PcStandard      |
-|                                | QHSE_AccèsAvancé           | QHSE_PcAdmin          |
-| **Service Commercial**         | COMMER_AccèsStandard       | COMMER_PcStandard     |
-|                                | COMMER_AccèsAvancé         | COMMER_PcAdmin        |
-| **Service Recrutement**        | RH_AccèsStandard           | RH_PcStandard         |
-|                                | RH_AccèsAvancé             | RH_PcAdmin            |
-| **Invités/Externes**           | EXT_AccèsStandard          | EXT_PcStandard        |
-|                                | EXT_AccèsAvancé            | EXT_PcAdmin           |
+| **Departement**              |  **groupe**     | **Utilisateur** (1ère lettre du prénom + nom de famille)             | **Ordinateur**        |
+|:----------------|:--------------:|:--------------------------:|:--------------------:|
+| **Serveurs Internes(SRV)**     |     | PNOM          |          |
+|                                |              | |SRV-PC-<marque>-<ref>            |
+| **Communication et RP(CRP)**    |  Relation Médias(RME), Communication interne(CIN), Gestion des marques(GMA)  |       PNOM   |        |
+|                                |           | |CRP_PC-<marque>-<ref>           |
+| **Département Juridique(DJU)**  |  Propriété intellectuelle(PIN), Droit des sociétés(DSO), Protection des données et conformité(PDC)  | PNOM          |        |
+|                                |             | |DJU-PC-<marque>-<ref>           |
+| **Développement Logiciel(DLO)**  |  Développement(DEV), analyse et conception(ANC), Test et qualité(TEQ), Recherche et Prototype(RPT) | PNOM         |
+  |
+|                                |            | |DLO-PC-<marque>-<ref>           |
+| **Direction(DIR)**              |    | PNOM         |         |
+|                                |           | |DIR-PC-<marque>-<ref>           |
+| **DSI**                  |   Exploitation(EXP), Administration Systèmes et Réseaux(ASR), Développement et Intégration(DIN), Support(SUP)   | PNOM          |         |
+|                                |            | |DSI-PC-<marque>-<ref>           |
+| **Finance et Comptabilité(FCO)**|  Finance(FIN), Service Comptabilité(SCO), Fiscalité(FIS)  | PNOM         |         |
+|                                |             | |FCO-PC-<marque>-<ref>           |
+| **QHSE (Qualité, Hygiène, Sécurité, Environnement)(QHS)**|Contrôle Qualité(CQL), Gestion environnementale(GEN), Certification(CER) | PNOM        |      |
+|                                |            | |QHS-PC-<marque>-<ref>          |
+| **Service Commercial(SCO)**    |  ADV, Service achat(ACH), B2B, Service Client(CLI)   | PNOM       |      |
+|                                |         | |SCO-PC-<marque>-<ref>        |
+| **Service Recrutement(SRH)**  |      | PNOM           |         |
+|                                |              | |SRH-PC-<marque>-<ref>            |
+| **Invités/Externes(EXT)**      |     | PNOM          |        |
+|                                |             | |EXT-PC-<marque>-<ref>           |
 
 
 
@@ -46,14 +48,14 @@
 
 ## **Détail des GPOs**
 
-| **Catégorie**       | **GPO**                                      |
+| **Catégorie**       | **cateegorie+ departement+groupe+GPO**                                      |
 |---------------------|----------------------------------------------|
-| SEC (Sécurité)      | Sec_Comptabilité_MDP_complexe                |
-|                     | Sec_Comptabilité_MDP_expiration              |
-|                     | Sec_Comptabilité_MDP_verrouillage_Echec      |
-|                     | Sec_Comptabilité_Verrouillage_inactivité     |
-| ENV (Environnement) | ENV_Tous_Réduire_Bureau                      |
-|                     | ENV_Tous_Masquer_icônes_Bureau               |
-| APP (Applications)  | APP_Tous_Bloquer_install_logiciel            |
-| NET (Réseau)        | NET_Tous_Bloquer_site                        |
-| ADM (Administration)| ADM_DSI_Activation_RDP                      |
+| SEC (Sécurité)      | Sec_CRP_MDP-complexe                |
+|                     | Sec_DJU_PIN_MDP-expiration              |
+|                     | Sec_DIR_MDP_verrouillage-Echec      |
+|                     | Sec_TOUS_Verrouillage-inactivité     |
+| ENV (Environnement) | ENV_Tous_Réduire-Bureau                      |
+|                     | ENV_Tous_Masquer_icônes-Bureau               |
+| APP (Applications)  | APP_Tous_Bloquer_install-logiciel            |
+| NET (Réseau)        | NET_Tous_Bloquer-site                        |
+| ADM (Administration)| ADM_DSI_EXP_Activation-RDP                      |
