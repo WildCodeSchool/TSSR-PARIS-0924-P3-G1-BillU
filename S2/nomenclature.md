@@ -21,6 +21,14 @@
 | **Invités/Externes (EXT)**                   |                                                                                               | PNOM                                                   | EXT-PC-<marque>-<ref>    |
 
 
+## **Serveurs de l'infrastructure**
+
+| **Nom du Serveur**        | **Rôle**                                                                                          | **Adresse IP**  |
+|:--------------------------|:-------------------------------------------------------------------------------------------------:|:---------------:|
+| G1-Wserver2022-ADDS       | Le serveur Active Directory (ADDS) gère les comptes utilisateurs, les groupes et le DNS pour la société.| 172.19.1.41     |
+| G1-Debian-DHCP            | Le serveur DHCP attribue automatiquement des adresses IP en fonction des plages par département.         | 172.19.1.48     |
+| G1-WserverCore-ADDS       | Serveur ADDS sans GUI : Backup du serveur Active Directory, accessible uniquement à distance           | 172.19.1.56     |
+
 
 
 ## **GPO (Group Policy Objects)**
