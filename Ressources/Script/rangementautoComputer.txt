@@ -1,24 +1,29 @@
-# Définir les préfixes et leurs OUs cibles
-$DepartmentOUs = @{
-    "CRP" = "OU=Communication et Relations publiques,OU=COMPUTER,DC=wilder,DC=lan"
-    "DJU" = "OU=Departement Juridique,OU=COMPUTER,DC=wilder,DC=lan"
-    "DLO" = "OU=Developpement logiciel,OU=COMPUTER,DC=wilder,DC=lan"
-    "DIR" = "OU=Direction,OU=COMPUTER,DC=wilder,DC=lan"
-    "DSI" = "OU=DSI,OU=COMPUTER,DC=wilder,DC=lan"
-    "FCO" = "OU=Finance et Comptabilité,OU=COMPUTER,DC=wilder,DC=lan"
-    "QHS" = "OU=QHSE,OU=COMPUTER,DC=wilder,DC=lan"
-    "SCO" = "OU=Service Commercial,OU=COMPUTER,DC=wilder,DC=lan"
-    "SRE" = "OU=Service recrutement,OU=COMPUTER,DC=wilder,DC=lan"
-    "SRV" = "OU=Serveur,OU=COMPUTER,DC=wilder,DC=lan"
-}
+################################################################################
+#                 CLASSEMENT AUTOMATISE DANS LES OU                            #
+################################################################################
 
 # Importer le module Active Directory si nécessaire
 If (-not (Get-Module -Name ActiveDirectory)) {
     Import-Module ActiveDirectory
 }
 
+#RANGEMENT DES ORDINATEURS
+# Définir les préfixes et leurs OUs cibles
+$DepartmentOUs = @{
+    "CRP" = "OU=Communication et Relations publiques,OU=COMPUTER,DC=BILLU,DC=REMINDME,DC=LAN"
+    "DJU" = "OU=Departement Juridique,OU=COMPUTER,DC=BILLU,DC=REMINDME,DC=LAN"
+    "DLO" = "OU=Developpement logiciel,OU=COMPUTER,DC=BILLU,DC=REMINDME,DC=LAN"
+    "DIR" = "OU=Direction,OU=COMPUTER,DC=BILLU,DC=REMINDME,DC=LANn"
+    "DSI" = "OU=DSI,OU=COMPUTER,DC=BILLU,DC=REMINDME,DC=LAN"
+    "FCO" = "OU=Finance et Comptabilité,OU=COMPUTER,DC=BILLU,DC=REMINDME,DC=LAN"
+    "QHS" = "OU=QHSE,OU=COMPUTER,OU=COMPUTER,DC=BILLU,DC=REMINDME,DC=LAN"
+    "SCO" = "OU=Service Commercial,OU=COMPUTER,DC=BILLU,DC=REMINDME,DC=LAN"
+    "SRE" = "OU=Service recrutement,OU=COMPUTER,DC=BILLU,DC=REMINDME,DC=LAN"
+    "SRV" = "OU=Serveur,OU=COMPUTER,DC=BILLU,DC=REMINDME,DC=LAN"
+}
+
 # Obtenir tous les ordinateurs dans le domaine
-$Computers = Get-ADComputer -Filter * -SearchBase CN=Computers,DC=billu,DC=remindme,DC=lan
+$Computers = Get-ADComputer -Filter * -SearchBase "CN=Computers,DC=billu,DC=remindme,DC=lan"
 
 # Boucle à travers chaque ordinateur et déplacer dans l'OU appropriée en fonction du préfixe
 foreach ($Computer in $Computers) {
@@ -47,6 +52,52 @@ foreach ($Computer in $Computers) {
         Write-Host "L'ordinateur $($Computer.Name) ne correspond à aucun préfixe défini." -ForegroundColor Yellow
     }
 }
+
+#RANGEMENT DES UTILISATEURS
+# Définir les départements et leurs OUs cibles
+$DepartmentOUs = @{
+    "Administrateur" = "OU=Administrateurs,OU=USER,DC=BILLU,DC=REMINDME,DC=LAN"
+    "Communication et Relations publiques" = "OU=Communication et Relations publiques,OU=USER,DC=BILLU,DC=REMINDME,DC=LAN"
+    "Departement Juridique" = "OU=Departement Juridique,OU=USER,DC=BILLU,DC=REMINDME,DC=LAN"
+    "Developpement logiciel" = "OU=Developpement logiciel,OU=USER,DC=BILLU,DC=REMINDME,DC=LAN"
+    "Direction" = "OU=Direction,OOU=USER,DC=BILLU,DC=REMINDME,DC=LAN"
+    "DSI" = "OU=DSI,OU=USER,DC=BILLU,DC=REMINDME,DC=LAN"
+    "Finance et Comptabilite" = "OU=Finance et Comptabilite,OU=USER,DC=BILLU,DC=REMINDME,DC=LAN"
+    "QHSE" = "OU=QHSE,OU=USER,DC=BILLU,DC=REMINDME,DC=LAN"
+    "Service Commercial" = "OU=Service Commercial,OU=USER,DC=BILLU,DC=REMINDME,DC=LAN"
+    "Service recrutement" = "OU=Service recrutement,OU=USER,DC=BILLU,DC=REMINDME,DC=LAN"
+}
+
+# Obtenir tous les utilisateurs dans le domaine
+$Users = Get-ADUser -Filter * -SearchBase "CN=Users,DC=billu,DC=remindme,DC=lan"
+
+# Boucle à travers chaque utilisateur et déplacer dans l'OU appropriée en fonction du département
+foreach ($User in $Users) {
+    $TargetPath = $null
+
+    # Vérifier si le champ "Department" de l'utilisateur correspond à l'un des départements
+    foreach ($department in $DepartmentOUs.Keys) {
+        if ($User.Department -like "*$department*") {
+            $TargetPath = $DepartmentOUs[$department]
+            break
+        }
+    }
+
+    # Si l'utilisateur correspond à un département
+    if ($TargetPath) {
+        try {
+            # Déplacer l'utilisateur dans l'OU appropriée
+            Move-ADObject -Identity $User.DistinguishedName -TargetPath $TargetPath -Confirm:$false
+            Write-Host "L'utilisateur $($User.SamAccountName) a été déplacé dans $TargetPath" -ForegroundColor Green
+        } catch {
+            Write-Host "Erreur lors du déplacement de l'utilisateur $($User.SamAccountName): $_" -ForegroundColor Red
+        }
+    }
+    else {
+        Write-Host "L'utilisateur $($User.SamAccountName) ne correspond à aucun département défini." -ForegroundColor Yellow
+    }
+}
+
 
 
 
