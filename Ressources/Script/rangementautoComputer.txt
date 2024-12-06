@@ -1,39 +1,52 @@
+# Définir les préfixes et leurs OUs cibles
+$DepartmentOUs = @{
+    "CRP" = "OU=Communication et Relations publiques,OU=COMPUTER,DC=wilder,DC=lan"
+    "DJU" = "OU=Departement Juridique,OU=COMPUTER,DC=wilder,DC=lan"
+    "DLO" = "OU=Developpement logiciel,OU=COMPUTER,DC=wilder,DC=lan"
+    "DIR" = "OU=Direction,OU=COMPUTER,DC=wilder,DC=lan"
+    "DSI" = "OU=DSI,OU=COMPUTER,DC=wilder,DC=lan"
+    "FCO" = "OU=Finance et Comptabilité,OU=COMPUTER,DC=wilder,DC=lan"
+    "QHS" = "OU=QHSE,OU=COMPUTER,DC=wilder,DC=lan"
+    "SCO" = "OU=Service Commercial,OU=COMPUTER,DC=wilder,DC=lan"
+    "SRE" = "OU=Service recrutement,OU=COMPUTER,DC=wilder,DC=lan"
+    "SRV" = "OU=Serveur,OU=COMPUTER,DC=wilder,DC=lan"
+}
+
 # Importer le module Active Directory si nécessaire
 If (-not (Get-Module -Name ActiveDirectory)) {
     Import-Module ActiveDirectory
 }
 
-# Définir les chemins des OUs pour les serveurs et les laptops
-$OU_Server = OU=Server,OU=COMPUTER,DC=billu,DC=remindme,DC=lan
-$OU_PCStandard = OU=PC_Standard,OU=COMPUTER,DC=billu,DC=remindme,DC=lan
-
 # Obtenir tous les ordinateurs dans le domaine
-$Computers = Get-ADComputer -Filter  -SearchBase CN=Computers,DC=billu,DC=remindme,DC=lan
+$Computers = Get-ADComputer -Filter * -SearchBase CN=Computers,DC=billu,DC=remindme,DC=lan
 
-# Boucle à travers chaque ordinateur et déplacer dans l'OU appropriée
+# Boucle à travers chaque ordinateur et déplacer dans l'OU appropriée en fonction du préfixe
 foreach ($Computer in $Computers) {
-    $TargetPath = 
+    $TargetPath = $null
 
-    # Vérifier si le nom de l'ordinateur contient SRV (serveur)
-    if ($Computer.Name -like SRV) {
-        $TargetPath = $OU_Server
+    # Vérifier si le nom de l'ordinateur commence par l'un des préfixes définis dans $DepartmentOUs
+    foreach ($prefix in $DepartmentOUs.Keys) {
+        if ($Computer.Name -like "$prefix*") {
+            $TargetPath = $DepartmentOUs[$prefix]
+            break
+        }
     }
-    # Vérifier si le nom de l'ordinateur contient PC (PC standard)
-    elseif ($Computer.Name -like *PC*) {
-        $TargetPath = $OU_PCStandard
-    }
-    
-    # Si une destination a été définie (l'ordinateur correspond à un critère)
+
+    # si l'ordinateur correspond à un préfixe
     if ($TargetPath) {
         try {
             # Déplacer l'ordinateur dans l'OU appropriée
-            Move-ADObject -Identity $Computer.DistinguishedName -TargetPath $TargetPath -Confirm$false
-            Write-Host L'ordinateur $($Computer.Name) a été déplacé dans $TargetPath -ForegroundColor Green
+            Move-ADObject -Identity $Computer.DistinguishedName -TargetPath $TargetPath -Confirm:$false
+            Write-Host "L'ordinateur $($Computer.Name) a été déplacé dans $TargetPath" -ForegroundColor Green
         } catch {
-            Write-Host Erreur lors du déplacement de l'ordinateur $($Computer.Name)  $_ -ForegroundColor Red
+            Write-Host "Erreur lors du déplacement de l'ordinateur $($Computer.Name): $_" -ForegroundColor Red
         }
     }
+    # sinon message d'erreur
     else {
-        Write-Host L'ordinateur $($Computer.Name) ne correspond à aucun critère (SRV ou LAPTOP). -ForegroundColor Yellow
+        Write-Host "L'ordinateur $($Computer.Name) ne correspond à aucun préfixe défini." -ForegroundColor Yellow
     }
 }
+
+
+
