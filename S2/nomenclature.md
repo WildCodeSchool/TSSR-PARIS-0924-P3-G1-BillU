@@ -6,31 +6,20 @@
 
 ## **Groupes d'utilisateurs et ordinateurs**
 
-| **Departement**              |  **groupe**     | **Utilisateur** (1ère lettre du prénom + nom de famille)             | **Ordinateur**        |
-|:----------------|:--------------:|:--------------------------:|:--------------------:|
-| **Serveurs Internes(SRV)**     |     | PNOM          |          |
-|                                |              | |SRV-PC-<marque>-<ref>            |
-| **Communication et RP(CRP)**    |  Relation Médias(RME), Communication interne(CIN), Gestion des marques(GMA)  |       PNOM   |        |
-|                                |           | |CRP_PC-<marque>-<ref>           |
-| **Département Juridique(DJU)**  |  Propriété intellectuelle(PIN), Droit des sociétés(DSO), Protection des données et conformité(PDC)  | PNOM          |        |
-|                                |             | |DJU-PC-<marque>-<ref>           |
-| **Développement Logiciel(DLO)**  |  Développement(DEV), analyse et conception(ANC), Test et qualité(TEQ), Recherche et Prototype(RPT) | PNOM         |
-  |
-|                                |            | |DLO-PC-<marque>-<ref>           |
-| **Direction(DIR)**              |    | PNOM         |         |
-|                                |           | |DIR-PC-<marque>-<ref>           |
-| **DSI**                  |   Exploitation(EXP), Administration Systèmes et Réseaux(ASR), Développement et Intégration(DIN), Support(SUP)   | PNOM          |         |
-|                                |            | |DSI-PC-<marque>-<ref>           |
-| **Finance et Comptabilité(FCO)**|  Finance(FIN), Service Comptabilité(SCO), Fiscalité(FIS)  | PNOM         |         |
-|                                |             | |FCO-PC-<marque>-<ref>           |
-| **QHSE (Qualité, Hygiène, Sécurité, Environnement)(QHS)**|Contrôle Qualité(CQL), Gestion environnementale(GEN), Certification(CER) | PNOM        |      |
-|                                |            | |QHS-PC-<marque>-<ref>          |
-| **Service Commercial(SCO)**    |  ADV, Service achat(ACH), B2B, Service Client(CLI)   | PNOM       |      |
-|                                |         | |SCO-PC-<marque>-<ref>        |
-| **Service Recrutement(SRH)**  |      | PNOM           |         |
-|                                |              | |SRH-PC-<marque>-<ref>            |
-| **Invités/Externes(EXT)**      |     | PNOM          |        |
-|                                |             | |EXT-PC-<marque>-<ref>           |
+| **Département**                               | **Groupe**                                                                                     | **Utilisateur** (1ère lettre du prénom + nom de famille) | **Ordinateur**           |
+|:---------------------------------------------|:---------------------------------------------------------------------------------------------:|:-------------------------------------------------------:|:-------------------------:|
+| **Serveurs Internes (SRV)**                  |                                                                                               | PNOM                                                   | SRV-PC-<marque>-<ref>    |
+| **Communication et RP (CRP)**                | Relation Médias (RME), Communication interne (CIN), Gestion des marques (GMA)                | PNOM                                                   | CRP-PC-<marque>-<ref>    |
+| **Département Juridique (DJU)**              | Propriété intellectuelle (PIN), Droit des sociétés (DSO), Protection des données et conformité (PDC) | PNOM                                                   | DJU-PC-<marque>-<ref>    |
+| **Développement Logiciel (DLO)**             | Développement (DEV), Analyse et conception (ANC), Test et qualité (TEQ), Recherche et Prototype (RPT) | PNOM                                                   | DLO-PC-<marque>-<ref>    |
+| **Direction (DIR)**                          |                                                                                               | PNOM                                                   | DIR-PC-<marque>-<ref>    |
+| **DSI**                                      | Exploitation (EXP), Administration Systèmes et Réseaux (ASR), Développement et Intégration (DIN), Support (SUP) | PNOM                                                   | DSI-PC-<marque>-<ref>    |
+| **Finance et Comptabilité (FCO)**            | Finance (FIN), Service Comptabilité (SCO), Fiscalité (FIS)                                    | PNOM                                                   | FCO-PC-<marque>-<ref>    |
+| **QHSE (Qualité, Hygiène, Sécurité, Environnement) (QHS)** | Contrôle Qualité (CQL), Gestion environnementale (GEN), Certification (CER)                   | PNOM                                                   | QHS-PC-<marque>-<ref>    |
+| **Service Commercial (SCO)**                 | ADV, Service achat (ACH), B2B, Service Client (CLI)                                           | PNOM                                                   | SCO-PC-<marque>-<ref>    |
+| **Service Recrutement (SRH)**                |                                                                                               | PNOM                                                   | SRH-PC-<marque>-<ref>    |
+| **Invités/Externes (EXT)**                   |                                                                                               | PNOM                                                   | EXT-PC-<marque>-<ref>    |
+
 
 
 
