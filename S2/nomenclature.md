@@ -37,14 +37,14 @@
 
 ## **Détail des GPOs**
 
-| **Catégorie**       | **cateegorie+ departement+groupe+GPO**                                      |
+| **Catégorie**       | **categorie+ departement+groupe+GPO**                                      |
 |---------------------|----------------------------------------------|
 | SEC (Sécurité)      | Sec_CRP_MDP-complexe                |
 |                     | Sec_DJU_PIN_MDP-expiration              |
-|                     | Sec_DIR_MDP_verrouillage-Echec      |
+|                     | Sec_DIR_MDP-verrouillage-Echec      |
 |                     | Sec_TOUS_Verrouillage-inactivité     |
 | ENV (Environnement) | ENV_Tous_Réduire-Bureau                      |
-|                     | ENV_Tous_Masquer_icônes-Bureau               |
-| APP (Applications)  | APP_Tous_Bloquer_install-logiciel            |
+|                     | ENV_Tous_Masquer-icônes-Bureau               |
+| APP (Applications)  | APP_Tous_Bloquer-install-logiciel            |
 | NET (Réseau)        | NET_Tous_Bloquer-site                        |
 | ADM (Administration)| ADM_DSI_EXP_Activation-RDP                      |
