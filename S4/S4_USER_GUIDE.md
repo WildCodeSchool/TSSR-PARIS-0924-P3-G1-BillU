@@ -1,4 +1,4 @@
-## Procédure détaillée de création de ticket dans GLPI
+## Procédure de création de ticket dans GLPI
 
 ### 1. **Se connecter à GLPI**
    - Ouvrez votre navigateur et accédez à la page de connexion de GLPI.
