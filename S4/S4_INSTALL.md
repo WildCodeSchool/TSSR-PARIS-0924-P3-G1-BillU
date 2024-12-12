@@ -233,6 +233,8 @@ Etape 6 Test de Connexion et création de ticket depuis un utilisateur AD  :
 - **Vérification de l’accès :**
    - Vérifiez que l'utilisateur peut bien créer des tickets et consulter les informations de la base de connaissances.
 
+  
+
 
 
 
