@@ -231,7 +231,7 @@ Les groupes importés depuis l’AD seront disponibles dans GLPI dans le menu .
    - L’agent communiquera avec le serveur GLPI et enregistrera les informations des machines (nom, adresse IP, matériel, etc.).
 
 
-### Etape 6 Test de Connexion et création de ticket depuis un utilisateur AD  : 
+### Etape 6 : Test de Connexion et création de ticket depuis un utilisateur AD  : 
 
 -  **Accéder à la page de connexion de GLPI :**
    - Ouvrez votre navigateur et allez sur la page de connexion de GLPI.
