@@ -177,11 +177,61 @@ Les groupes importés depuis l’AD seront disponibles dans GLPI dans le menu .
 ![image](https://github.com/user-attachments/assets/0790ced0-30e0-4aa9-9666-5a0fd6ce697a)
 
 
-Etape 4 : Creation de ticket
+Etape 4 : Gestionnaire de ticket
 
+- **Configurer les entités :**  
+  - Allez dans **Administration > Entités**.  
+  - Ajoutez des entités pour organiser votre support (par exemple, Département A, Département B, etc.).
 
+- **Configurer les catégories de tickets :**  
+  - Allez dans **Assistance > Configuration > Catégories**.  
+  - Ajoutez des catégories de tickets selon vos besoins (par exemple, Incident, Demande, Maintenance, etc.).
+
+- **Configurer les règles de gestion des tickets :**  
+  - Allez dans **Configuration > Règles**.  
+  - Créez des règles pour automatiser l’affectation des tickets,  
+    la notification ou l’escalade.
+
+- **Configurer les règles de notification :**  
+  - Allez dans **Configuration > Notifications**.  
+  - Ajoutez des règles de notification pour les tickets (par exemple, notification par e-mail lors de la création d'un ticket, de l'assignation, etc.).
+
+- **Configurer les profils et les droits d'accès :**  
+  - Allez dans **Administration > Profils**.  
+  - Configurez les profils d'utilisateurs pour définir les droits d'accès (par exemple, Technicien, Demandeur, Administrateur, etc.).
+
+- **Configurer le formulaire de ticket :**  
+  - Allez dans **Assistance > Tickets > +**.  
+  - Configurez le formulaire de ticket selon vos besoins.  
+  - Ajoutez des champs personnalisés.  
+  - Définissez des types de demandes, etc.
+ 
 
 Etape 5 : Import des ordinateurs
+
+
+Etape 6 Test de Connexion et création de ticket depuis un utilisateur AD  : 
+
+-  **Accéder à la page de connexion de GLPI :**
+   - Ouvrez votre navigateur et allez sur la page de connexion de GLPI.
+   - Vous remarquerez que la page de connexion a changé et permet désormais de se connecter via le domaine Active Directory Billu, en plus de la base de données interne de GLPI.
+
+- **Saisir les informations de connexion :**
+   - Dans le champ "Identifiant", entrez l'identifiant d'un utilisateur AD.
+   - Dans le champ "Mot de passe", entrez le mot de passe de votre utilisateur AD.
+     
+- **Valider la connexion :**
+   - Cliquez sur le bouton de connexion.
+   - Si les informations saisies sont correctes, l'utilisateur sera connecté à GLPI.
+
+- **Accès et profil par défaut :**
+   - Une fois connecté, l'utilisateur aura par défaut le profil **"Self-Service"**.
+   - Avec ce profil, l'utilisateur pourra :
+     - Créer et suivre l’état de ses propres tickets.
+     - Accéder à la base de connaissance de GLPI en mode FAQ, si celle-ci est utilisée.
+
+- **Vérification de l’accès :**
+   - Vérifiez que l'utilisateur peut bien créer des tickets et consulter les informations de la base de connaissances.
 
 
 
