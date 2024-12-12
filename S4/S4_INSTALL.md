@@ -105,7 +105,7 @@ Attention à l'étape 6 se trouve les informations de connexion par défaut à l
 
 # Synchronisation AD
 
-Etape 1 : Synchronisation AD
+### Etape 1 : Synchronisation AD
 
 - Connectez vous en tant que super-admin ( avec compte glpi par défaut) sur l’interface web de GLPI.
   
@@ -138,7 +138,7 @@ Après cet ajout, un test de connexion à l’AD est automatiquement effectué.
 
 La configuration du serveur est terminée. Les utilisateurs du domaine pourront s’identifier directement. Leurs informations seront ajoutées automatiquement à GLPI.
 
-Etape 2 : Import en masse tous les utilisateurs qui sont dans la « BaseDN 
+### Etape 2 : Import en masse tous les utilisateurs depuis la BaseDN 
 
 - Aller dans le menu Administration > Utilisateur
 
@@ -162,7 +162,7 @@ Les utilisateurs importés depuis l’AD seront disponibles dans GLPI dans le me
 
 ![image](https://github.com/user-attachments/assets/0790ced0-30e0-4aa9-9666-5a0fd6ce697a)
 
-Etape 3 : Import des groupes 
+### Etape 3 : Import des groupes 
 
 - Aller dans le menu Administration > Groupes
   
@@ -177,7 +177,7 @@ Les groupes importés depuis l’AD seront disponibles dans GLPI dans le menu .
 ![image](https://github.com/user-attachments/assets/0790ced0-30e0-4aa9-9666-5a0fd6ce697a)
 
 
-Etape 4 : Gestionnaire de ticket
+### Etape 4 : Gestionnaire de ticket
 
 - **Configurer les entités :**  
   - Allez dans **Administration > Entités**.  
@@ -207,10 +207,31 @@ Etape 4 : Gestionnaire de ticket
   - Définissez des types de demandes, etc.
  
 
-Etape 5 : Import des ordinateurs
+### Etape 5 : Import des ordinateurs AD dans GLPI via une GPO
+
+- **Préparer l'agent GLPI**
+   - Téléchargez et préparez l'agent GLPI sur un partage réseau accessible par tous les ordinateurs.
+
+- **Création des GPO pour l’installation de l’agent GLPI**
+
+- GPO 1 : Dossier partagé réseau — Crée un partage réseau contenant l'agent GLPI accessible aux postes clients.
+- GPO 2 : Copie de l'agent GLPI en local — Copie l'agent sur chaque poste dans un répertoire local.
+- GPO 3 : Exécution de l'agent GLPI — Exécute l'agent localement pour qu'il envoie les informations au serveur GLPI.
+
+- **Déployer la GPO**
+   - Lier les GPO à l’unité organisationnelle (OU) contenant les ordinateurs sur lesquels vous souhaitez installer l’agent.
+   - Vérifiez que les permissions de la GPO sont correctement définies pour permettre l’application sur les machines cibles.
+
+- **Vérifier l’installation de l’agent GLPI**
+   - Sur les ordinateurs clients, l’agent GLPI s’installe automatiquement au prochain démarrage.
+   - Vous pouvez vérifier l’installation en consultant les journaux d’événements ou en vérifiant la présence de l'agent dans la liste des applications installées.
+
+- **Importation des ordinateurs dans GLPI**
+   - Une fois l'agent installé, les ordinateurs apparaîtront automatiquement dans GLPI, sous la section **Gestion > Ordinateurs**.
+   - L’agent communiquera avec le serveur GLPI et enregistrera les informations des machines (nom, adresse IP, matériel, etc.).
 
 
-Etape 6 Test de Connexion et création de ticket depuis un utilisateur AD  : 
+### Etape 6 Test de Connexion et création de ticket depuis un utilisateur AD  : 
 
 -  **Accéder à la page de connexion de GLPI :**
    - Ouvrez votre navigateur et allez sur la page de connexion de GLPI.
