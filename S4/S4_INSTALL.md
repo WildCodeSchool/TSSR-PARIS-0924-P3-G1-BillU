@@ -105,7 +105,7 @@ Attention à l'étape 6 se trouve les informations de connexion par défaut à l
 
 # Synchronisation AD
 
-Etape 1 : Importer des utilisateurs d’Active Directory 
+Etape 1 : Synchronisation AD
 
 - Connectez vous en tant que super-admin ( avec compte glpi par défaut) sur l’interface web de GLPI.
   
@@ -138,7 +138,31 @@ Après cet ajout, un test de connexion à l’AD est automatiquement effectué.
 
 La configuration du serveur est terminée. Les utilisateurs du domaine pourront s’identifier directement. Leurs informations seront ajoutées automatiquement à GLPI.
 
-Etape 2 : Import des groupes 
+Etape 2 : Import en masse tous les utilisateurs qui sont dans la « BaseDN 
+
+- Aller dans le menu Administration > Utilisateur
+
+- Cliquer sur le bouton Liaison annuaire LDAP.
+
+![image](https://github.com/user-attachments/assets/823bb92b-9b46-4cce-a683-3348d219480c)
+
+- Cliquer sur Importation de nouveaux utilisateurs.
+
+ ![image](https://github.com/user-attachments/assets/74658f81-a33f-4559-a854-2bf9d16716b3)
+
+- Cliquer sur le bouton rechercher
+
+![image](https://github.com/user-attachments/assets/735e7330-d89c-4e25-a466-e14ae181a378)
+
+- Cocher les cases des utilisateurs que vous voulez importer puis menu Actions > Importer.
+
+![import user](https://github.com/user-attachments/assets/3a375842-aa83-4c0e-9cb1-2c57e0c2a3c6)
+
+Les utilisateurs importés depuis l’AD seront disponibles dans GLPI dans le menu .
+
+![image](https://github.com/user-attachments/assets/0790ced0-30e0-4aa9-9666-5a0fd6ce697a)
+
+Etape 3 : Import des groupes 
 
 - Aller dans le menu Administration > Groupes
   
@@ -148,18 +172,16 @@ Etape 2 : Import des groupes
 
 GLPI vous proposera en bas de page tous les groupes disponibles dans le BaseDN. Cocher les cases des groupes que vous voulez importer, menu Actions puis Importer.
 
-![import user](https://github.com/user-attachments/assets/3a375842-aa83-4c0e-9cb1-2c57e0c2a3c6)
-
 Les groupes importés depuis l’AD seront disponibles dans GLPI dans le menu .
 
 ![image](https://github.com/user-attachments/assets/0790ced0-30e0-4aa9-9666-5a0fd6ce697a)
 
 
-Etape 3 : Creation de ticket
+Etape 4 : Creation de ticket
 
 
 
-Etape 4 : Import des ordinateurs
+Etape 5 : Import des ordinateurs
 
 
 
