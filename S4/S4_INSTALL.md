@@ -187,7 +187,7 @@ La configuration du serveur est terminée. Les utilisateurs du domaine pourront 
 
 Les utilisateurs importés depuis l’AD seront disponibles dans GLPI dans le menu .
 
-![image](https://github.com/user-attachments/assets/0790ced0-30e0-4aa9-9666-5a0fd6ce697a)
+![image](https://github.com/user-attachments/assets/32c13061-ce26-4e3c-9c7a-1f2a384ec100)
 
 ### Etape 3 : Import des groupes 
 
