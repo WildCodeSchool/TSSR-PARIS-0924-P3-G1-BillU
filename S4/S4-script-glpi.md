@@ -29,7 +29,7 @@ sudo mysql_secure_installation
 DB_NAME="glpi_db"
 DB_USER="glpi_user"
 DB_PASSWORD="glpipassword"
-ROOT_PASSWORD="rootpassword"  # Change-le si nécessaire
+ROOT_PASSWORD="rootpassword"  #le changer si on a besoin
 
 echo "Création de la base de données GLPI..."
 sudo mysql -u root -p$ROOT_PASSWORD -e "CREATE DATABASE $DB_NAME;"
