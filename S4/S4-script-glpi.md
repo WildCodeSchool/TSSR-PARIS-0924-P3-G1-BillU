@@ -6,12 +6,12 @@ echo "Mise à jour des paquets..."
 sudo apt update -y
 sudo apt upgrade -y
 
-# Installer Apache, PHP et MariaDB (ou MySQL)
+# Installer Apache, PHP et MariaDB 
 
 echo "Installation d'Apache, PHP et MariaDB..."
 sudo apt install apache2 php libapache2-mod-php mariadb-server php-mysql php-cli php-xml php-mbstring php-curl php-json php-gd php-zip -y
 
-# Démarrer et activer les services Apache et MariaDB
+# Démarrer   Apache et MariaDB
 
 echo "Démarrage des services Apache et MariaDB..."
 sudo systemctl start apache2
@@ -19,7 +19,7 @@ sudo systemctl start mariadb
 sudo systemctl enable apache2
 sudo systemctl enable mariadb
 
-# Sécuriser MariaDB (ajouter un mot de passe root et configurer la base de données)
+# Sécuriser MariaDB (ajouter un mot de passe root)
 
 echo "Sécurisation de MariaDB..."
 sudo mysql_secure_installation
@@ -50,19 +50,19 @@ echo "Extraction de GLPI..."
 sudo mkdir -p $GLPI_DIR
 sudo tar -xvzf /tmp/glpi-$GLPI_VERSION.tgz -C /var/www/html/
 
-# Définir les bonnes permissions pour le répertoire GLPI
+# Définir les permissions GLPI
 
 echo "Définition des permissions pour GLPI..."
 sudo chown -R www-data:www-data $GLPI_DIR
 sudo chmod -R 755 $GLPI_DIR
 
-# Activer les modules Apache nécessaires
+# Activer les modules Apache
 
 echo "Activation des modules Apache..."
 sudo a2enmod rewrite
 sudo systemctl restart apache2
 
-# Configuration de PHP (activations des extensions requises)
+# Configuration de PHP 
 
 echo "Activation des extensions PHP nécessaires..."
 sudo phpenmod mysqli
