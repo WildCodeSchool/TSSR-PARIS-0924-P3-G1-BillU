@@ -33,13 +33,13 @@ L’objectif final est de fournir une infrastructure moderne qui soutienne l’�
 # Objectifs par print
 ## Semaine 1
 ### Étapes du projet
-Definir les roles de l'équipe par sprint
-Fournir un plan d'adressage réseau complet
-Fournir un plan schématique du futur réseau
-Faire la liste des serveurs/matériels nécessaires
-Mettre en place une nomenclature de nom
-Instalation d'une vm windows serveur dhcp
-Instalation d'une vm windows serveur avec ad avec le nom de domaine billu.remindme.lan 
+Definir les roles de l'équipe par sprint   
+Fournir un plan d'adressage réseau complet  
+Fournir un plan schématique du futur réseau  
+Faire la liste des serveurs/matériels nécessaires  
+Mettre en place une nomenclature de nom  
+Instalation d'une vm windows serveur dhcp  
+Instalation d'une vm windows serveur avec ad avec le nom de domaine billu.remindme.lan   
 
 ### Choix Technique
 ### Difficultés rencontrées et Solutions trouvées
@@ -47,19 +47,19 @@ Instalation d'une vm windows serveur avec ad avec le nom de domaine billu.remind
 
 ## Semaine 2
 ### Étapes du projet
-1. AD-DS - Création d'un domaine AD
+AD-DS - Création d'un domaine AD  
 	1. Un serveur Windows Server 2022 GUI avec les rôles AD-DS, DHCP, DNS
 	2. Un serveur Windows Server 2022 Core avec le rôle AD-DS
 	3. Les 2 serveurs sont des DC du domaine et ont une réplication complète gérée
-2. Gestion de l'arborescence AD
+Gestion de l'arborescence AD  
 	1. Création des OU
 	2. Création des groupes
 	3. Création des comptes
-3. Gestion de l'arborescence AD  entièrement automatisée à partir du fichier CSV
+Gestion de l'arborescence AD  entièrement automatisée à partir du fichier CSV  
 	1. Création des groupes
 	2. Création des comptes
-4. Création d'une VM Serveur Linux Debian mise sur le domaine AD accessible en SSH
-5. Création d'une VM client
+Création d'une VM Serveur Linux Debian mise sur le domaine AD accessible en SSH  
+Création d'une VM client  
 	1. Sur le domaine AD
 	2. Avec un compte utilisateur ayant un accès SSH sur le serveur Linux
 ### Choix Technique
@@ -75,7 +75,14 @@ Instalation d'une vm windows serveur avec ad avec le nom de domaine billu.remind
 
 ## Semaine 4
 ### Étapes du projet
+Création de 5 GPO de sécurité  
+Création de 5 GPO de standard  
+Mise en place de script pour la création automatisé de l'Active Directory et d'un serveur de gestion de parc  
+
 ### Choix Technique
+- **Serveur de gestion de parc : GLPI**
+Nous avons fais le choix du logiciel GLPI car c'est une solution puissante et flexible pour la gestion du parc informatique. Son modèle open source, ses fonctionnalités complètes, sa capacité à évoluer selon les besoins de l'entreprise, ainsi que sa facilité d'intégration avec d'autres outils, en font un excellent choix pour une société comme BillU qui souhaite améliorer la gestion de son infrastructure réseau. Grâce à ses fonctionnalités d'inventaire, de gestion des incidents, de suivi des licences, et de sécurité, GLPI permet de rationaliser la gestion des équipements et d'améliorer l'efficacité de l'équipe IT.
+
 ### Difficultés rencontrées et Solutions trouvées
 ### Axe d'amélioration possible
 
