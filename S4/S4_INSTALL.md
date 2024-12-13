@@ -256,6 +256,101 @@ Les groupes importés depuis l’AD seront disponibles dans GLPI dans le menu .
 
   
 
+# automatisation de l'installation d'AD-DS sur Windows Server Core
+
+
+## 1-Introduction
+
+### automatisation de l'installation du rôle Active Directory Domain Services (AD-DS) sur un serveur Windows Server Core.
+- Objectifs :
+        - Installer et configurer AD-DS sur un serveur Windows Server Core.
+        - Automatiser le processus pour éviter des erreurs manuelles.
+        - Réduire le temps nécessaire pour l’installation et la configuration.
+- Pré-requis :
+        - Serveur Windows Server Core opérationnel.
+        - Accès administrateur local au serveur.
+        - Accès réseau au contrôleur de domaine .
+        
+
+## 2. Pré-requis techniques
+
+  
+- Réseau :
+        - IP statique configurée.
+        - Connectivité réseau au contrôleur de domaine ou au réseau d’entreprise.
+- Logiciels :
+        - Windows Server Core avec PowerShell configuré.
+        - Rôle Active Directory Domain Services disponible.
+
+## 3. Structure des fichiers
+
+- Scripts PowerShell :
+        - Nom du script principal : Install_ADDS.ps1.
+        - Description des autres scripts ou fichiers nécessaires.
+- Fichier de configuration :
+        - Format utilisé : CSV 
+        Exemple de contenu :
+
+        ServerName,IPAddress,DNSServer,DomainName,DomainAdmin,DomainPassword
+        ServerCore01,172.19.1.10,172.19.1.41,billu.remindme.lan,Administrator,Azerty1*
+
+    Dossier de stockage :
+        Exemple : C:\Scripts.
+        
+## 4. Script PowerShell
+
+- Description du script :
+   
+
+# Charger le fichier de configuration
+$config = Import-Csv -Path ".\config.csv"
+
+# Extraire les valeurs du fichier
+$ServerName = $config.ServerName
+    $IPAddress = $config.IPAddress
+    $DNSServer = $config.DNSServer
+    $DomainName = $config.DomainName
+    $DomainAdmin = $config.DomainAdmin
+    $DomainPassword = $config.DomainPassword
+
+# Installer le rôle AD-DS
+Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools -Verbose
+
+# Configurer le serveur comme contrôleur de domaine
+Install-ADDSForest -DomainName $DomainName -SafeModeAdministratorPassword (ConvertTo-SecureString "P@ssword123" -AsPlainText -Force)
+
+# Redémarrer le serveur
+Restart-Computer -Force
+
+- Personnalisation :
+        Ajouter des options pour adapter le script selon les besoins (exemple : nom de domaine ou plage IP).
+
+## 5. Étapes d'exécution
+
+- 1ère étape : Copier le fichier de configuration et le script sur le serveur.
+- 2e étape : Exécuter le script sur le serveur Core a partir du serveur adds
+        Commande :
+
+   Invoke-Command -ComputerName "NomDuServeurCore" -FilePath "C:\Chemin\Vers\NomDuScript.ps1"
+
+
+- 3e étape : Vérifier l’installation via PowerShell.
+
+    - Commandes :
+
+        Get-WindowsFeature -Name AD-Domain-Services
+        Get-ADDomainController
+
+## 6. Vérifications post-installation
+
+- État des rôles installés :
+        Commande : Get-WindowsFeature.
+- Statut du contrôleur de domaine :
+        Commande : Get-ADDomainController.
+- Test de connectivité DNS :
+        - Commande :
+
+     Resolve-DnsName example.local
 
 
 
