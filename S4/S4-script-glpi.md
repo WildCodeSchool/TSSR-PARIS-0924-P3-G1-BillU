@@ -81,6 +81,14 @@ echo "Accédez à : http://localhost/glpi"
 rm /tmp/glpi-$GLPI_VERSION.tgz
 
 echo "Fin du script d'installation."
+
+
+
+
+
+# **Nom du fichier: install_glpi.sh.
+# **Donner les permissions pour executer: chmod +x install_glpi.sh
+# **Pour lexecuter: ./install_glpi.sh
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
