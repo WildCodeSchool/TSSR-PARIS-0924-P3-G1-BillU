@@ -1,87 +1,84 @@
+#!/bin/bash
 
-     #Vérifier si un paquet est installé
- 
-function Check-Installed {
-    param(
-        [string]$package
-    )
-    $result = Get-WmiObject -Query "SELECT * FROM Win32_Product WHERE Name LIKE '%$package%'"
-    return $result -ne $null
-}
+# Mettre à jour les paquets existants
 
-     # Installer Apache, PHP et MariaDB si non installés
-if (-not (Check-Installed -package "Apache HTTP Server")) {
-    Write-Host "Installation d'Apache..."
-    choco install apache-httpd -y
-}
+echo "Mise à jour des paquets..."
+sudo apt update -y
+sudo apt upgrade -y
 
-if (-not (Check-Installed -package "PHP")) {
-    Write-Host "Installation de PHP..."
-    choco install php -y
-}
+# Installer Apache, PHP et MariaDB (ou MySQL)
 
-if (-not (Check-Installed -package "MariaDB")) {
-    Write-Host "Installation de MariaDB..."
-    choco install mariadb -y
-}
+echo "Installation d'Apache, PHP et MariaDB..."
+sudo apt install apache2 php libapache2-mod-php mariadb-server php-mysql php-cli php-xml php-mbstring php-curl php-json php-gd php-zip -y
 
-     # Démarrer Apache et MariaDB
-Write-Host "Démarrage des services Apache et MariaDB..."
-Start-Service -Name "Apache2.4"
-Start-Service -Name "MariaDB"
+# Démarrer et activer les services Apache et MariaDB
 
-     # Attente pour que le services sois bien démarrés
-Start-Sleep -Seconds 10
+echo "Démarrage des services Apache et MariaDB..."
+sudo systemctl start apache2
+sudo systemctl start mariadb
+sudo systemctl enable apache2
+sudo systemctl enable mariadb
 
-     # Vérifier que les services sont en cours d'exécution
-if ((Get-Service -Name "Apache2.4").Status -eq 'Running' -and (Get-Service -Name "MariaDB").Status -eq 'Running') {
-    Write-Host "Apache et MariaDB sont maintenant en cours d'exécution."
-} else {
-    Write-Host "Erreur lors du démarrage des services."
-}
+# Sécuriser MariaDB (ajouter un mot de passe root et configurer la base de données)
 
-     # Configuration de la base de données MySQL/MariaDB
-$rootPassword = "rootpassword"  # Mot de passe pour l'utilisateur root de MariaDB
-$dbName = "glpi_db"  # Nom de la base de données GLPI
-$dbUser = "glpi_user"  # Utilisateur GLPI
-$dbPassword = "glpipassword"  # Mot de passe de l'utilisateur GLPI
+echo "Sécurisation de MariaDB..."
+sudo mysql_secure_installation
 
-      # Créer la base de données GLPI
-Write-Host "Création de la base de données GLPI..."
-mysql -u root -p$rootPassword -e "CREATE DATABASE $dbName;"
-mysql -u root -p$rootPassword -e "CREATE USER '$dbUser'@'localhost' IDENTIFIED BY '$dbPassword';"
-mysql -u root -p$rootPassword -e "GRANT ALL PRIVILEGES ON $dbName.* TO '$dbUser'@'localhost';"
-mysql -u root -p$rootPassword -e "FLUSH PRIVILEGES;"
+# Création de la base de données et de l'utilisateur GLPI
 
-Write-Host "Base de données GLPI créée avec succès."
+DB_NAME="glpi_db"
+DB_USER="glpi_user"
+DB_PASSWORD="glpipassword"
+ROOT_PASSWORD="rootpassword"  # Change-le si nécessaire
 
-     # Télécharger et extraire GLPI
-$glpiDownloadUrl = "https://github.com/glpi-project/glpi/releases/download/10.0.4/glpi-10.0.4.tgz"
-$glpiDir = "C:\inetpub\wwwroot\glpi"
+echo "Création de la base de données GLPI..."
+sudo mysql -u root -p$ROOT_PASSWORD -e "CREATE DATABASE $DB_NAME;"
+sudo mysql -u root -p$ROOT_PASSWORD -e "CREATE USER '$DB_USER'@'localhost' IDENTIFIED BY '$DB_PASSWORD';"
+sudo mysql -u root -p$ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_USER'@'localhost';"
+sudo mysql -u root -p$ROOT_PASSWORD -e "FLUSH PRIVILEGES;"
 
-Write-Host "Téléchargement de GLPI..."
-Invoke-WebRequest -Uri $glpiDownloadUrl -OutFile "C:\glpi-10.0.4.tgz"
+# Télécharger GLPI
 
-Write-Host "Extraction de GLPI..."
-New-Item -Path $glpiDir -ItemType Directory -Force
-tar -xvzf "C:\glpi-10.0.4.tgz" -C $glpiDir
+GLPI_VERSION="10.0.4"
+GLPI_URL="https://github.com/glpi-project/glpi/releases/download/$GLPI_VERSION/glpi-$GLPI_VERSION.tgz"
+GLPI_DIR="/var/www/html/glpi"
 
-Write-Host "GLPI téléchargé et extrait avec succès."
+echo "Téléchargement de GLPI version $GLPI_VERSION..."
+wget $GLPI_URL -O /tmp/glpi-$GLPI_VERSION.tgz
 
-    # Configuration de PHP (activation de certaines extensions)
-Write-Host "Activation des extensions PHP nécessaires..."
-$phpIniPath = "C:\tools\php\php.ini"
-    
-    # Modifier php.ini pour activer les extensions nécessaires (exemple pour mysqli)
-$phpIniContent = Get-Content -Path $phpIniPath
-$phpIniContent = $phpIniContent -replace ";extension=mysqli", "extension=mysqli"
-$phpIniContent | Set-Content -Path $phpIniPath
+echo "Extraction de GLPI..."
+sudo mkdir -p $GLPI_DIR
+sudo tar -xvzf /tmp/glpi-$GLPI_VERSION.tgz -C /var/www/html/
 
-      # Redémarrer Apache pour appliquer les changements PHP
-Write-Host "Redémarrage d'Apache pour appliquer les changements PHP..."
-Restart-Service -Name "Apache2.4"
+# Définir les bonnes permissions pour le répertoire GLPI
 
-      # Finaliser l'installation
-Write-Host "L'installation de GLPI est terminée. Accédez à l'URL suivante pour finaliser la configuration via le navigateur web :"
-Write-Host "http://localhost/glpi"
+echo "Définition des permissions pour GLPI..."
+sudo chown -R www-data:www-data $GLPI_DIR
+sudo chmod -R 755 $GLPI_DIR
+
+# Activer les modules Apache nécessaires
+
+echo "Activation des modules Apache..."
+sudo a2enmod rewrite
+sudo systemctl restart apache2
+
+# Configuration de PHP (activations des extensions requises)
+
+echo "Activation des extensions PHP nécessaires..."
+sudo phpenmod mysqli
+sudo phpenmod mbstring
+sudo phpenmod curl
+sudo phpenmod json
+sudo systemctl restart apache2
+
+# Finalisation de l'installation
+
+echo "Installation terminée. Vous pouvez maintenant configurer GLPI via le navigateur."
+echo "Accédez à : http://localhost/glpi"
+
+# Nettoyage des fichiers temporaires
+
+rm /tmp/glpi-$GLPI_VERSION.tgz
+
+echo "Fin du script d'installation."
 
