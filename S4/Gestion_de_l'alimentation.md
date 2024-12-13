@@ -17,9 +17,7 @@
 
 ![Capture d’écran du 2024-12-12 22-16-50](https://github.com/user-attachments/assets/832a48c5-2fdd-4acc-b339-1d8db0a944b2)
 
-## Puis aller dans "Sleep Settings" et selectionner "Specify the unattended sleep timeout" et mettre "min" pour "Plugin" et "Battery"
-
-![Capture d’écran du 2024-12-12 22-16-50](https://github.com/user-attachments/assets/b7dd4b10-f590-482b-8f85-0cc76b43ab9e)
+## Puis aller dans "Sleep Settings" et selectionner "Specify the unattended sleep timeout" et mettre "5min" pour "Plugin" et "Battery"
 
 ![Capture d’écran du 2024-12-12 22-21-50](https://github.com/user-attachments/assets/42c664d6-b1df-4b3c-9dfd-4b0307d6e35d)
 
