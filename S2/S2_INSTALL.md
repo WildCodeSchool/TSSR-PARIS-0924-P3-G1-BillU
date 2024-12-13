@@ -65,7 +65,7 @@ sudo systemctl status isc-shcp-server
 sudo apt install krb5-user
 ``` 
 
-***Configurer Kerberos** 
+**Configurer Kerberos** 
 ```bash 
 sudo nano /etc/krb5.conf
 ```
