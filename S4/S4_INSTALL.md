@@ -1,4 +1,31 @@
-# S4
+# Sommaire
+
+## S4
+- [Installation d'un serveur GPLPI sur Debian](#installation-dun-serveur-gplpi-sur-debian)
+  - [Étape 1 : Installation d'un serveur web Apache](#étape-1--installation-dun-serveur-web-apache)
+  - [Étape 2 : Installation de PHP](#étape-2--installation-de-php)
+  - [Étape 3 : Installation de la base de données MariaDB](#étape-3--installation-de-la-base-de-données-mariadb)
+  - [Étape 4 : Téléchargement et extraction de GLPI](#étape-4--téléchargement-et-extraction-de-glpi)
+  - [Étape 5 : Configuration du chemin d'accès du serveur web](#étape-5--configuration-du-chemin-daccès-du-serveur-web)
+  - [Connexion au serveur GPLPI depuis un client](#connexion-au-serveur-gplpi-depuis-un-client)
+
+- [Synchronisation AD](#synchronisation-ad)
+  - [Étape 1 : Synchronisation AD](#étape-1--synchronisation-ad)
+  - [Étape 2 : Import en masse des utilisateurs depuis la BaseDN](#étape-2--import-en-masse-des-utilisateurs-depuis-la-basedn)
+  - [Étape 3 : Import des groupes](#étape-3--import-des-groupes)
+  - [Étape 4 : Gestionnaire de ticket](#étape-4--gestionnaire-de-ticket)
+  - [Étape 5 : Import des ordinateurs AD dans GLPI via une GPO](#étape-5--import-des-ordinateurs-ad-dans-glpi-via-une-gpo)
+  - [Étape 6 : Test de connexion et création de ticket depuis un utilisateur AD](#étape-6--test-de-connexion-et-création-de-ticket-depuis-un-utilisateur-ad)
+
+- [Automatisation de l'installation d'AD-DS sur Windows Server Core](#automatisation-de-linstallation-dad-ds-sur-windows-server-core)
+  - [Introduction](#1-introduction)
+  - [Prérequis techniques](#2-prérequis-techniques)
+  - [Structure des fichiers](#3-structure-des-fichiers)
+  - [Script PowerShell](#4-script-powershell)
+  - [Étapes d'exécution](#5-étapes-dexécution)
+  - [Vérifications post-installation](#6-vérifications-post-installation)
+
+
 # Installation d'un serveur GPLPI sur Debian 
 
 ### Etape 1 : Installation d'un serveur web Apache 
