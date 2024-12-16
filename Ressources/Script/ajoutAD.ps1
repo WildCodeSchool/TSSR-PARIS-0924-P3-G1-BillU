@@ -12,7 +12,9 @@ $credential = New-Object System.Management.Automation.PSCredential($username, $s
 # Nom de l'ordinateur à joindre au domaine
 $computerName = "NomDuPC" 
 
-# Exécuter la commande à distance sur le PC cible
-Invoke-Command -ComputerName $computerName -ScriptBlock {
+$ip = "172.19.1.7"  # Remplacez par l'IP de l'ordinateur distant
+$credential = Get-Credential  # Pour obtenir les informations d'identification de l'administrateur
+
+Invoke-Command -ComputerName $ip -Credential $credential -ScriptBlock {
     Add-Computer -DomainName "billu.remindme.lan" -Credential $using:credential -Restart
-} -Credential $credential
+}
