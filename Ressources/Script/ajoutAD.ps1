@@ -9,8 +9,10 @@ $securePassword = ConvertTo-SecureString $password -AsPlainText -Force
 # Créer un objet d'identification avec le nom d'utilisateur et le mot de passe sécurisé
 $credential = New-Object System.Management.Automation.PSCredential($username, $securePassword)
 
-# Ajouter l'ordinateur au domaine
-Add-Computer -DomainName $domain -Credential $credential -Restart
+# Nom de l'ordinateur à joindre au domaine
+$computerName = "NomDuPC" 
 
-# Redémarrer l'ordinateur pour appliquer les changements
-Write-Host "L'ordinateur va maintenant redémarrer et rejoindre le domaine $domain."
+# Exécuter la commande à distance sur le PC cible
+Invoke-Command -ComputerName $computerName -ScriptBlock {
+    Add-Computer -DomainName "billu.remindme.lan" -Credential $using:credential -Restart
+} -Credential $credential
