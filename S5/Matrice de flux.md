@@ -1,4 +1,6 @@
-# Alias IP
+# Régles de gestion des alias
+
+## Alias IP
 
 | Firewall Alias      | Type        | IP(s)                   | Description                                 |
 |---------------------|-------------|-------------------------|---------------------------------------------|
@@ -19,7 +21,7 @@
 | Wan_Subnet          | Network(s)  | 198.168.0.0/16           | Réseau extérieur                            |
 
 
-# Alias Port
+## Alias Port
 
 | Firewall Alias | Type      | Port(s)   | Description                                                      |
 |----------------|-----------|-----------|------------------------------------------------------------------|
@@ -38,7 +40,7 @@
 | VPN            | Port(s)   | 1194      | Connexion à distance sécurisée                                   |
 
 
-# Alias URL 
+## Alias URL 
 
 | Firewall Alias      | Type        | IP(s)                   | Description                                 |
 |---------------------|-------------|-------------------------|---------------------------------------------|
@@ -46,7 +48,8 @@
 | SocialNetwork       | Host(s)     | facebook.com, twitter.com| Réseaux sociaux non professionnels          |
 
 
-# Regles 
+# Régles d'autorisation et de restrictions des pare-feux
+
 ## WAN
 |Protocole|IP Source|IP Destination|Port Destination|Action|Explication|
 |:--------:|:--------:|:-------:|:-------:|:---------:|:----------:| 
@@ -75,10 +78,3 @@
 |SSH,TCP | Réseau WAN | Réseau DMZ     | 22 | Autoriser |  Autoriser SSH entre la DMZ et la WAN |
 |TCP | Any | Réseau DMZ     | 80(HTTP) 443(HTTPS) | Autoiser  | Autoriser l'entrée d'internet à partir du serverWeb |
 |Any  | *             | Any    | *        | Bloquer           |   Bloquer toutes interactions vers la DMZ     |
-
-
-## Pfsense
-|Protocole|IP Source|IP Destination|Port Destination|Action|Explication|
-|:--------:|:--------:|:-------:|:-------:|:---------:|:----------:| 
-|TCP   |Admin    |Any      |443         | Autoriser| Autoriser |
-|TCP   |Admin    |Any      |443         | Refuser | Refuser |
