@@ -44,7 +44,7 @@
 
 | Firewall Alias      | Type        | IP(s)                   | Description                                 |
 |---------------------|-------------|-------------------------|---------------------------------------------|
-| media               | Host(s)     | facebook.com             |                                             |
+| Streaming           | Host(s)     | netflix.com             |  Site de streaming                          |
 | SocialNetwork       | Host(s)     | facebook.com, twitter.com| Réseaux sociaux non professionnels          |
 
 
