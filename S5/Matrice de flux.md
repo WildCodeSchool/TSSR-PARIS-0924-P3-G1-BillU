@@ -1,5 +1,10 @@
+# Alias 
 
-# WAN
+# Alias Port
+
+
+# Regles 
+## WAN
 |Protocole|IP Source|IP Destination|Port Destination|Action|Explication|
 |:--------:|:--------:|:-------:|:-------:|:---------:|:----------:| 
 |UDP | Réseau DMZ | Réseau WAN     | 123 | Autoriser |  Autorisation de synchronisation des horloges |
@@ -8,7 +13,7 @@
 |SSH,TCP | Réseau DMZ | Réseau WAN     | 22 | Autoriser |  Autoriser la communication sécurisé |
 |Any  | *             |172.19.1.44      | *        | Bloquer           |   Bloquer toutes interactions vers le WAN     |
 
-# DMZ 
+## DMZ 
 |Protocole|IP Source|IP Destination|Port Destination|Action|Explication|
 |:--------:|:--------:|:-------:|:-------:|:---------:|:----------:| 
 |UDP | Réseau DMZ | Réseau WAN     | 123 | Autoriser |  Autorisation de synchronisation des horloges |
@@ -18,7 +23,7 @@
 |TCP | Any | serverWeb   | 80(HTTP) 443(HTTPS) | Autoiser  | Autoriser l'entrée d'internet à partir du serverWeb |
 |Any  | *             | Any    | *        | Bloquer           |   Bloquer toutes interactions vers la DMZ     |
 
-# LAN 
+## LAN 
 |Protocole|IP Source|IP Destination|Port Destination|Action|Explication|
 |:--------:|:--------:|:-------:|:-------:|:---------:|:----------:| 
 |UDP | Réseau DMZ | Réseau WAN     | 123 | Autoriser |  Autorisation de synchronisation des horloges |
@@ -29,7 +34,7 @@
 |Any  | *             | Any    | *        | Bloquer           |   Bloquer toutes interactions vers la DMZ     |
 
 
-# Pfsense
+## Pfsense
 |Protocole|IP Source|IP Destination|Port Destination|Action|Explication|
 |:--------:|:--------:|:-------:|:-------:|:---------:|:----------:| 
 |TCP   |Admin    |Any      |443         | Autoriser| Autoriser |
