@@ -1,5 +1,47 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Installation de pfSense
 ---------------------------
+
+
+
+
+
+
+![pfsensens](https://github.com/user-attachments/assets/91d2223c-0d8d-46ce-bdc3-957e255efc31)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   -Processeur Intel ou AMD 64 bits (x86-64, amd64) sur pfSense 2.4 et versions ultérieures.
