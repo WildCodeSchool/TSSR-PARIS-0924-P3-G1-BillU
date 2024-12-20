@@ -77,24 +77,21 @@ Le système doit maintenant redémarrer pour que pfSense puisse démarrer à par
 
 Après le redémarrage du système, pfSense s'exécutera à partir du disque cible. L'étape suivante consiste à attribuer des interfaces sur la console ci-dessous.
 --------------------------------------------------------
-Affecter des interfaces sur la console.
+Ce texte décrit la procédure d'attribution d'interfaces réseau sur pfSense, un pare-feu open source, lors de son installation et configuration initiale.
 
-Le fichier de configuration par défaut de pfSense 2.3 a em0 attribué au WAN et em1 au LAN. Si le matériel cible a em0 et em1 , l'invite d'attribution est ignorée et l'installation se déroulera normalement. Plusieurs autres plates-formes courantes telles que nos systèmes SG, APU et ALIX sont également reconnues et leurs interfaces seront attribuées dans l'ordre attendu.
-Si la plate-forme matérielle ne peut pas être identifiée, une liste des interfaces réseau et de leurs adresses MAC situées sur le système s'affiche, ainsi qu'une indication de leur état de liaison si celui-ci est pris en charge par la carte réseau. L'état de liaison est indiqué par le signe « (up) » apparaissant après l'adresse MAC si une liaison est détectée sur cette interface. L'adresse MAC (Media Access Control) d'une carte réseau est un identifiant unique attribué à chaque carte, et deux cartes réseau ne doivent pas avoir la même adresse MAC. Après cela, une invite s'affiche pour la configuration du VLAN.
-Réseaux locaux virtuels.
+Attribution par défaut des interfaces :
+Par défaut, pfSense attribue em0au WAN et em1au LAN si ces interfaces sont présentes sur le matériel. Si le matériel est reconnu (ex. SG, APU, ALIX), les interfaces sont automatiquement attribuées.
 
-L'option permettant d'attribuer des VLAN est présentée en premier. Si les VLAN ne sont pas nécessaires ou s'ils ne sont pas connus, entrez Non ici. Les VLAN sont facultatifs et ne sont nécessaires que pour la mise en réseau avancée. Un équipement compatible VLAN est également requis s'il doit être utilisé. Voir :doc:`VLAN Trunking </interfaces/vlan-trunking>` pour plus de détails.
-Réseau local, réseau étendu, OPTx
+Reconnaissance manuelle des interfaces :
+Si le matériel n'est pas identifié, pfSense affiche une liste des interfaces disponibles avec leurs adresses MAC et leur état de liaison ( upsi actif). L'utilisateur peut ensuite attribuer manuellement les interfaces WAN et LAN.
 
-La première invite d'interface concerne l' interface WAN . Si l'interface est connue, entrez son nom, tel que igb0 ou em0 , puis appuyez sur Entrée . Si l'identité de la carte n'est pas connue, reportez-vous à la section suivante pour connaître la procédure d'attribution automatique.
-La deuxième invite d'interface concerne l' interface LAN . Entrez l'interface appropriée, telle que igb1 ou em1 , puis appuyez à nouveau sur Entrée . Si seule l'interface WAN doit être utilisée et aucune interface LAN, appuyez sur Entrée sans donner d'autre entrée.
-Une seule interface (WAN) est nécessaire pour configurer pfSense. Si plusieurs interfaces sont disponibles, elles peuvent être affectées aux interfaces LAN et OPTx. La procédure est la même pour les interfaces supplémentaires : saisissez le nom de l'interface appropriée, puis appuyez sur Entrée .
-Lorsqu'il n'y a plus d'interfaces à ajouter, appuyez sur Entrée . La liste des interfaces attribuées s'affiche. Si les mappages sont corrects, saisissez y , sinon saisissez n et répétez l'attribution.
-REMARQUE : si une seule carte réseau est attribuée (WAN), cela s'appelle le mode Appliance. Dans ce mode, pfSense déplace la règle anti-verrouillage de l'interface graphique vers l'interface WAN afin que le pare-feu soit accessible à partir de là. Les fonctions de routage habituelles ne seraient pas actives puisqu'il n'y a pas d'interface « interne ». Ce type de configuration est utile pour les appareils VPN, les serveurs DNS, etc.
-Procédure d'attribution automatique.
+Support des VLAN :
+Une étape optionnelle permet de configurer les VLAN, utiles uniquement pour des configurations réseau avancées avec du matériel compatible.
 
-Pour l'attribution automatique d'interface, débranchez d'abord tous les câbles réseau du système, puis tapez a et appuyez sur Entrée . Branchez maintenant un câble réseau sur l'interface qui doit se connecter au WAN et appuyez sur Entrée . Si tout s'est bien passé, pfSense devrait maintenant savoir quelle interface utiliser pour le WAN. Le même processus peut être répété pour le LAN et toutes les interfaces facultatives qui seront nécessaires. Si un message s'affiche tel que Aucune liaison détectée, consultez :doc:`Dépannage de l'installation </install/installation-troubleshooting>` pour plus d'informations sur le tri des identités de cartes réseau.
-Configuration par défaut de pfSense
+Processus d'attribution des interfaces :
+
+L'utilisateur attribue les interfaces WAN et LAN en entrant leur nom (ex. em0, em1).
+Si une seule interface (WAN) est attribuée, pfSense active le mode Appliance
 
 Après l'installation et l'affectation de l'interface, pfSense a la configuration par défaut suivante :
 ------------------------------------------------------------
