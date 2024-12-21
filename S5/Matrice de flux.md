@@ -65,7 +65,7 @@
 |UDP | Réseau DMZ | Réseau WAN     | 123 | Autoriser |  Autorisation de synchronisation des horloges |
 |SMTP,TCP | Réseau WAN | Réseau DMZ     | 25,587,465 | Autoriser |  Autorisation pour l'envoie d'email  |
 |FTP,TCP | Réseau WAN | Réseau DMZ    | 20.21 | Autoriser |  Autorisation des mises à jours et des transferts de fichier |
-|SSH,TCP |  Admin | Réseau DMZ     | 22 | Autoriser |  Autoriser la connexion SSH du compte administrateur vers la DMZ |
+|SSH,TCP |  Admin | Réseau DMZ     | 22 | Autoriser |  Autoriser la connexion du compte administrateur vers la DMZ |
 |TCP | Any | serverWeb   | 80(HTTP) 443(HTTPS) | Autoiser  | Autoriser l'entrée d'internet à partir du serverWeb |
 |Any  | *             | Any    | *        | Bloquer           |   Bloquer toutes interactions vers la DMZ     |
 
