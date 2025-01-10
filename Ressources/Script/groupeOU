@@ -1,0 +1,10 @@
+$ou = "OU=Service Recrutement,DC=BILLE,DC=REMINDME,DC=LAN"  # Remplacez par le chemin de votre OU
+$group = "Accès_Dossier_OU"  # Remplacez par le nom du groupe créé
+
+# Récupérer tous les utilisateurs de l'OU
+$users = Get-ADUser -Filter * -SearchBase "LDAP://$ou"
+
+# Ajouter chaque utilisateur au groupe
+foreach ($user in $users) {
+    Add-ADGroupMember -Identity $group -Members $user.SamAccountName
+}
