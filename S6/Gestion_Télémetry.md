@@ -1,5 +1,5 @@
 
-                                                    # Gestion de Télémetry #
+                                                    ## Gestion de Télémetry ##
 ## 1. Désactivez l'évaluateur de compatibilité Microsoft via le planificateur de tâches 
  Microsoft Compatibility Appraiser analyse les fichiers d'application Windows 10/11 résidant sur l'ordinateur pour évaluer leur compatibilité avec Windows 10 si une mise à niveau est effectuée.
 Pour résoudre votre problème, vous pouvez désactiver ce service depuis le Planificateur de tâches en suivant les étapes ci-dessous :
