@@ -1,6 +1,6 @@
-# **Sommaire configuration RAID 1 et Dossier de partage**
+# Sommaire de la procédure
 
-
+---
 
 ## **Partie 1 : Configuration RAID 1**
 
@@ -47,6 +47,7 @@
 ## **Remarques générales**
 - **RAID 1** assure une redondance pour la sécurité des données mais ne remplace pas une sauvegarde externe.
 - Les permissions doivent être soigneusement configurées pour garantir la sécurité et l’accès approprié des utilisateurs.
+
 
 # configuration Raid 1
 ### **1. Accéder au Gestionnaire de disques**
