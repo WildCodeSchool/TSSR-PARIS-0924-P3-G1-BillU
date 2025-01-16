@@ -1,6 +1,6 @@
 INSTALL GUIDE Infrastructure sécurisée pour BillU
 Semaine_S7
-Date de documentation: 18/12/2023
+Date de documentation: 16/01/2025
 
 Besoins initiaux : besoins du projet:
 installer un serveur Zabbix pour la supervision des serveurs du parc informatique
@@ -8,13 +8,11 @@ installer un serveur Zabbix pour la supervision des serveurs du parc informatiqu
 Choix techniques:
 Étapes d'installation et de configuration :
 Installation serveur Zabbix :
-Prérequis pour l'installation sur serveur Debian 11.8 version graphique : LAMP Zabbix nécessite un serveur web, une base de données MySQL/MariaDB et PHP.
+Un serveur avec une distribution Linux (Debian, Ubuntu, CentOS, etc).
+Un serveur web (Apache ou Nginx).
+Un SGBD ou DBMS (MariaDB/MySQL ou PostgreSQL).
+Un Windows 11 où installer l'agent Zabbix.
 
-Installation d'Apache:
-apt install apache2
-Installation de MySQL/MariaDB:
-apt install mariadb-server
-Après l'installation, sécurisez MariaDB:
 
 mysql_secure_installation
 Installation de PHP:
