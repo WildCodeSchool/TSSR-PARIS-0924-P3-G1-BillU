@@ -42,10 +42,10 @@ function Menu-GestionUser {
         $choice = Read-Host -Prompt "Choisissez une option"
 
         switch ($choice) {
-            1 { C:\Users\Administrator\Documents\creationUser.ps1 }
-            2 { C:\Users\Administrator\Documents\modifyUser.ps1 }
-            3 { C:\Users\Administrator\Documents\disableUser.ps1 }
-            4 { C:\Users\Administrator\Documents\reactiveUser.ps1 }
+            1 { C:\Users\Administrator\Documents\CreationUser.ps1 }
+            2 { C:\Users\Administrator\Documents\ModifyUser.ps1 }
+            3 { C:\Users\Administrator\Documents\DisableUser.ps1 }
+            4 { C:\Users\Administrator\Documents\ReactiveUser.ps1 }
             5 { return  }
             6 { exit }
             default { Write-Output "Option incorrecte" }
