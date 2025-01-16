@@ -1,0 +1,26 @@
+
+# Script 3 : Désactivation d'un groupe
+
+
+# Importer le module Active Directory
+Import-Module ActiveDirectory
+# Chemin du fichier log pour désactivation
+$logFilePathDesactivation = "C:\Chemin\vers\logs_desactivation_groupes.txt"
+
+# Initialiser le fichier log
+Add-Content -Path $logFilePathDesactivation -Value "Début de la désactivation des groupes : $(Get-Date)`n"
+
+# Demander le nom du groupe à désactiver
+$nomGroupe = Read-Host "Entrez le nom du groupe à désactiver"
+
+try {
+    Set-ADGroup -Identity $nomGroupe -Enabled $false
+    Write-Host "Le groupe $nomGroupe a été désactivé" -ForegroundColor Green
+    Add-Content -Path $logFilePathDesactivation -Value "Le groupe $nomGroupe a été désactivé à $(Get-Date)`n"
+} catch {
+    Write-Host ("Erreur lors de la désactivation du groupe {0} : {1}" -f $nomGroupe, $_.Exception.Message) -ForegroundColor Red
+    Add-Content -Path $logFilePathDesactivation -Value "Erreur lors de la désactivation du groupe $nomGroupe : $($_.Exception.Message) à $(Get-Date)`n"
+}
+
+Add-Content -Path $logFilePathDesactivation -Value "Désactivation terminée : $(Get-Date)`n"
+Write-Host "Désactivation terminée." -ForegroundColor Cyan
