@@ -1,13 +1,12 @@
-
 # Script 1 : Création de groupes à partir du fichier s06_BillU.xlsx
 
 # Importer le module Active Directory
 Import-Module ActiveDirectory
 
 # Chemin du fichier CSV (s06_BillU.xlsx converti en CSV si nécessaire)
-$csvFilePath = "C:\Chemin\vers\s06_BillU.csv" # Remplacez par le chemin de votre fichier CSV
+$csvFilePath = "C:\Users\Administrator\Documents\ScriptAD\Utilisateurs.csv" # Remplacez par le chemin de votre fichier CSV
 # Chemin du fichier log
-$logFilePath = "C:\Chemin\vers\logs_creation_groupes.txt"
+$logFilePath = "C:\Users\Public\Documents\logs_creation_groupes.txt"
 
 # Charger les données du fichier CSV
 $groupes = Import-Csv -Path $csvFilePath
@@ -18,7 +17,7 @@ Add-Content -Path $logFilePath -Value "Début de la création des groupes : $(Ge
 # Boucle pour créer chaque groupe en utilisant le champ "Departement" comme nom du groupe
 foreach ($groupe in $groupes) {
     try {
-        New-ADGroup -Name $groupe.Departement -GroupScope Global -GroupCategory Security -Path "OU=Groups,DC=VotreDomaine,DC=com"
+        New-ADGroup -Name $groupe.Departement -GroupScope Global -GroupCategory Security -Path "OU=Groups,DC=billu,DC=remindme,DC=lan"
         Write-Host "Groupe créé : $($groupe.Departement)" -ForegroundColor Green
         Add-Content -Path $logFilePath -Value "Groupe créé : $($groupe.Departement) à $(Get-Date)`n"
     } catch {
@@ -29,3 +28,4 @@ foreach ($groupe in $groupes) {
 
 Add-Content -Path $logFilePath -Value "Création des groupes terminée : $(Get-Date)`n"
 Write-Host "Création des groupes terminée." -ForegroundColor Cyan
+
