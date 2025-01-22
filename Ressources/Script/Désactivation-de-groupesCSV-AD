@@ -24,3 +24,40 @@ try {
 
 Add-Content -Path $logFilePathDesactivation -Value "Désactivation terminée : $(Get-Date)`n"
 Write-Host "Désactivation terminée." -ForegroundColor Cyan
+
+
+
+# Importer le module Active Directory
+Import-Module ActiveDirectory
+
+# Chemin du fichier CSV
+$csvFilePath = "C:\Users\Administrator\Documents\ScriptAD\Groupes.csv" # Remplacez par le chemin de votre fichier CSV
+# Chemin du fichier log
+$logFilePath = "C:\Users\Public\Documents\logs_desactivation_groupes.txt"
+
+# Charger les données du fichier CSV
+$groupes = Import-Csv -Path $csvFilePath
+
+# Initialiser le fichier log
+Add-Content -Path $logFilePath -Value "Début de la désactivation des groupes : $(Get-Date)`n"
+
+# Boucle pour désactiver chaque groupe en utilisant le champ "Departement" comme nom du groupe
+foreach ($groupe in $groupes) {
+    try {
+        # Vérifier si le groupe existe
+        $adGroup = Get-ADGroup -Filter "Name -eq '$($groupe.Departement)'" -ErrorAction Stop
+        if ($null -ne $adGroup) {
+            # Modifier l'attribut Description pour indiquer la désactivation
+            Set-ADGroup -Identity $adGroup.DistinguishedName -Description "Désactivé - $(Get-Date)"
+            Write-Host "Groupe désactivé : $($groupe.Departement)" -ForegroundColor Green
+            Add-Content -Path $logFilePath -Value "Groupe désactivé : $($groupe.Departement) à $(Get-Date)`n"
+        }
+    } catch {
+        Write-Host ("Erreur lors de la désactivation du groupe {0} : {1}" -f $groupe.Departement, $_.Exception.Message) -ForegroundColor Red
+        Add-Content -Path $logFilePath -Value "Erreur lors de la désactivation du groupe $($groupe.Departement) : $($_.Exception.Message) à $(Get-Date)`n"
+    }
+}
+
+# Ajouter une entrée finale au log
+Add-Content -Path $logFilePath -Value "Désactivation des groupes terminée : $(Get-Date)`n"
+Write-Host "Désactivation des groupes terminée." -ForegroundColor Cyan
