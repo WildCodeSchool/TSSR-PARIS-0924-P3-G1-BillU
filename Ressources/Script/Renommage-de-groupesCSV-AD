@@ -24,3 +24,33 @@ try {
 
 Add-Content -Path $logFilePathRenommage -Value "Renommage terminé : $(Get-Date)`n"
 Write-Host "Renommage terminé." -ForegroundColor Cyan
+
+# Script 2 : Renommage d'un groupe
+
+# Importer le module Active Directory
+Import-Module ActiveDirectory
+# Chemin du fichier log pour renommage
+$logFilePathRenommage = "C:\Users\Public\Documents\logs_renommage_groupes.txt"
+
+# Initialiser le fichier log
+Add-Content -Path $logFilePathRenommage -Value "Début du renommage des groupes : $(Get-Date)`n"
+
+# Définir le chemin de l'OU cible
+$ouPath = "OU=UTILISATEUR,DC=billu,DC=remindme,DC=lan"
+
+# Demander le nom du groupe à modifier
+$ancienNom = Read-Host "Entrez le nom du groupe à modifier"
+$nouveauNom = Read-Host "Entrez le nouveau nom du groupe"
+
+try {
+    Rename-ADObject -Identity (Get-ADGroup -Filter {Name -eq $ancienNom}).DistinguishedName -NewName $nouveauNom
+    Write-Host "Le groupe a été renommé de $ancienNom à $nouveauNom" -ForegroundColor Green
+    Add-Content -Path $logFilePathRenommage -Value "Le groupe $ancienNom a été renommé en $nouveauNom à $(Get-Date)`n"
+} catch {
+    Write-Host ("Erreur lors du renommage du groupe {0} : {1}" -f $ancienNom, $_.Exception.Message) -ForegroundColor Red
+    Add-Content -Path $logFilePathRenommage -Value "Erreur lors du renommage du groupe $ancienNom : $($_.Exception.Message) à $(Get-Date)`n"
+}
+
+Add-Content -Path $logFilePathRenommage -Value "Renommage terminé : $(Get-Date)`n"
+Write-Host "Renommage terminé." -ForegroundColor Cyan
+
