@@ -25,11 +25,10 @@ try {
 Add-Content -Path $logFilePathRenommage -Value "Renommage terminé : $(Get-Date)`n"
 Write-Host "Renommage terminé." -ForegroundColor Cyan
 
-# Script 2 : Renommage d'un groupe
-
 # Importer le module Active Directory
 Import-Module ActiveDirectory
-# Chemin du fichier log pour renommage
+
+# Chemin du fichier log pour le renommage
 $logFilePathRenommage = "C:\Users\Public\Documents\logs_renommage_groupes.txt"
 
 # Initialiser le fichier log
@@ -43,14 +42,28 @@ $ancienNom = Read-Host "Entrez le nom du groupe à modifier"
 $nouveauNom = Read-Host "Entrez le nouveau nom du groupe"
 
 try {
-    Rename-ADObject -Identity (Get-ADGroup -Filter {Name -eq $ancienNom}).DistinguishedName -NewName $nouveauNom
-    Write-Host "Le groupe a été renommé de $ancienNom à $nouveauNom" -ForegroundColor Green
+    # Rechercher le groupe dans l'OU cible
+    $groupe = Get-ADGroup -Filter "Name -eq '$ancienNom'" -SearchBase $ouPath -ErrorAction Stop
+
+    # Vérifier si le groupe existe
+    if ($null -eq $groupe) {
+        Write-Host "Le groupe $ancienNom n'a pas été trouvé dans l'OU $ouPath." -ForegroundColor Red
+        Add-Content -Path $logFilePathRenommage -Value "Échec : Le groupe $ancienNom n'a pas été trouvé à $(Get-Date)`n"
+        return
+    }
+
+    # Renommer le groupe
+    Rename-ADObject -Identity $groupe.DistinguishedName -NewName $nouveauNom
+    Write-Host "Le groupe a été renommé de $ancienNom à $nouveauNom." -ForegroundColor Green
     Add-Content -Path $logFilePathRenommage -Value "Le groupe $ancienNom a été renommé en $nouveauNom à $(Get-Date)`n"
 } catch {
+    # Gestion des erreurs
     Write-Host ("Erreur lors du renommage du groupe {0} : {1}" -f $ancienNom, $_.Exception.Message) -ForegroundColor Red
     Add-Content -Path $logFilePathRenommage -Value "Erreur lors du renommage du groupe $ancienNom : $($_.Exception.Message) à $(Get-Date)`n"
 }
 
+# Ajouter une entrée finale au log
 Add-Content -Path $logFilePathRenommage -Value "Renommage terminé : $(Get-Date)`n"
 Write-Host "Renommage terminé." -ForegroundColor Cyan
+
 
