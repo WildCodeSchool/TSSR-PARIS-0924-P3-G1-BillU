@@ -32,7 +32,7 @@ sudo nano /etc/dhcp/dhcp.conf
 
 **Vérification de la configuration DHCP** 
 ```bash 
-sudo nano dhcp -t -cf /etc/dhcp/dhcp.conf 
+sudo dhcp -t -cf /etc/dhcp/dhcp.conf 
 ``` 
 ![Capture d’écran du 2024-12-12 22-44-51](https://github.com/user-attachments/assets/899d635e-5179-4dc4-95c9-181f99bbb1d4)
 
