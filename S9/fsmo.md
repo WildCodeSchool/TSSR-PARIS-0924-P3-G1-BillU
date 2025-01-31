@@ -25,7 +25,8 @@
 3. Cliquer sur **Modifier** et entrer le nom du domaine :  
 4. Saisir les **identifiants administrateurs du domaine**.
 5. **Redémarrer** le serveur.
-6) activer le server irm https://get.activated.win | iex tapez 4 puis 1
+6) activer le server irm https://get.activated.win | iex
+   puis selectionner 4 puis 1
 ---
 
 ## **3. Installer le rôle Active Directory**
