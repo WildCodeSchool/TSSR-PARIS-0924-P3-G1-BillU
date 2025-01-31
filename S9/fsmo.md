@@ -13,8 +13,6 @@
 
 ## **1. Prérequis**
 - Un **serveur membre** ajouté au domaine `billu.remindme.lan`.
-- Le rôle **Active Directory** installé.
-- Le serveur doit être **promu en contrôleur de domaine**.
 - Les **droits administrateur** sur Active Directory sont requis.
 
 ---
@@ -25,7 +23,7 @@
 3. Cliquer sur **Modifier** et entrer le nom du domaine :  
 4. Saisir les **identifiants administrateurs du domaine**.
 5. **Redémarrer** le serveur.
-6) activer le server irm https://get.activated.win | iex
+6. activer le server irm https://get.activated.win | iex
    puis selectionner 4 puis 1
 ---
 
