@@ -22,9 +22,10 @@ sudo nano /etc/dhcp/dhcp.conf
 ``` 
 
 **Résultat de la configuation du serveur DHCP**
-![Capture d’écran du 2024-12-12 22-39-51](https://github.com/user-attachments/assets/56ba87d5-06e2-42d6-abd5-7641a7ab25e7)
-![Capture d’écran du 2024-12-12 22-40-11](https://github.com/user-attachments/assets/dc71b5e7-dc2a-4288-a240-62eef251f386)
-![Capture d’écran du 2024-12-12 22-40-24](https://github.com/user-attachments/assets/5035f094-4ce4-44dc-b4ff-39fc943b503c)
+![Capture d’écran du 2025-02-17 15-07-26](https://github.com/user-attachments/assets/fe7384f4-d2e7-4225-8e17-45b5368bdd7d)
+
+
+![Capture d’écran du 2025-02-17 15-07-44](https://github.com/user-attachments/assets/aa671091-5f4d-4b83-bec1-992fcf7be282)
 
 **Vérification de la configuration DHCP** 
 ```bash 
