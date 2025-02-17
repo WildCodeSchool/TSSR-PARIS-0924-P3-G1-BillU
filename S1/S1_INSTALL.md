@@ -64,11 +64,14 @@ Serveur Debian :
 - glpi
 - dhcp
   
-Routeur
+Routeur  
 Pare-feu 
 
 4. Convention de nommage
 G1-OS-Utilité
 ex : G1-Debian-DHCP
+
+5 Schéma inital 
+![image](https://github.com/user-attachments/assets/aaf19931-3b4c-4b35-9d3c-733da2f7bbaa)
 
 
