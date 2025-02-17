@@ -22,6 +22,8 @@ sudo nano /etc/dhcp/dhcp.conf
 ``` 
 
 **Résultat de la configuation du serveur DHCP**
+
+
 ![Capture d’écran du 2025-02-17 15-07-26](https://github.com/user-attachments/assets/fe7384f4-d2e7-4225-8e17-45b5368bdd7d)
 
 
