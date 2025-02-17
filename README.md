@@ -68,6 +68,7 @@ Automatisation complète avec le CSV : Finaliser l'intégration complète des sc
 
 ## Semaine 3
 ### Étapes du projet
+Mise en place d'un serveur DHCP
 ### Choix Technique
 ### Difficultés rencontrées et Solutions trouvées
 ### Axe d'amélioration possible
