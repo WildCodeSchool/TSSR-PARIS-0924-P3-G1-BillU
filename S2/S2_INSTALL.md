@@ -121,6 +121,8 @@ procedure à noter
 procedure à noter
 
 ## Création  l'organigramme de la société
+![image](https://github.com/user-attachments/assets/b43c9d6c-662a-44a7-9f64-46bd7e924f6e)
+
 
 ## Creation des scripts pour l'automatisation : (voir ressource)
 - la création auto des OU
