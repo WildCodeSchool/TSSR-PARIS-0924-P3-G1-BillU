@@ -53,11 +53,22 @@ L’adressage est divisé comme suit :
 
 3. Liste du matériel et un schéma réseau de l'infrastructure
 
-
-
-
+Serveur Windwos :
+- Active Directiory
+  
+Serveur Debian : 
+- web
+- téléphonie
+- messagerie
+- ftp
+- glpi
+- dhcp
+  
+Routeur
+Pare-feu 
 
 4. Convention de nommage
-
+G1-OS-Utilité
+ex : G1-Debian-DHCP
 
 
