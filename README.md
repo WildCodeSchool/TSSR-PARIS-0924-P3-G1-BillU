@@ -70,7 +70,9 @@ Automatisation complète avec le CSV : Finaliser l'intégration complète des sc
 ### Étapes du projet
 Mise en place d'un serveur DHCP
 ### Choix Technique
+Nous avons choisi de mettre en place le serveur DHCP sur Debian en raison de sa stabilité, de sa sécurité accrue et de sa faible consommation de ressources, tout en bénéficiant d’une grande flexibilité pour adapter la gestion du réseau selon nos besoins.
 ### Difficultés rencontrées et Solutions trouvées
+La difficulté de faire entrer le serveur Debian dans l'Active Directory a été résolue en installant et configurant le paquet realmd pour l'intégration LDAP, permettant ainsi une authentification centralisée et une gestion simplifiée des utilisateurs.
 ### Axe d'amélioration possible
 
 ## Semaine 4
