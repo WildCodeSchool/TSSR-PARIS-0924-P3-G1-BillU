@@ -69,6 +69,7 @@ Automatisation complète avec le CSV : Finaliser l'intégration complète des sc
 ## Semaine 3
 ### Étapes du projet
 Mise en place d'un serveur DHCP
+Création de 5 GPO de sécurité
 ### Choix Technique
 Nous avons choisi de mettre en place le serveur DHCP sur Debian en raison de sa stabilité, de sa sécurité accrue et de sa faible consommation de ressources, tout en bénéficiant d’une grande flexibilité pour adapter la gestion du réseau selon nos besoins.
 ### Difficultés rencontrées et Solutions trouvées
@@ -77,10 +78,8 @@ La difficulté de faire entrer le serveur Debian dans l'Active Directory a été
 
 ## Semaine 4
 ### Étapes du projet
-Création de 5 GPO de sécurité   
 Création de 5 GPO de standard     
 Mise en place de script pour la création automatisé de l'Active Directory et d'un serveur de gestion de parc    
-
 ### Choix Technique
 - **Serveur de gestion de parc : GLPI**
 Nous avons fais le choix du logiciel GLPI car c'est une solution puissante et flexible pour la gestion du parc informatique. Son modèle open source, ses fonctionnalités complètes, sa capacité à évoluer selon les besoins de l'entreprise, ainsi que sa facilité d'intégration avec d'autres outils, en font un excellent choix pour une société comme BillU qui souhaite améliorer la gestion de son infrastructure réseau. Grâce à ses fonctionnalités d'inventaire, de gestion des incidents, de suivi des licences, et de sécurité, GLPI permet de rationaliser la gestion des équipements et d'améliorer l'efficacité de l'équipe IT.
